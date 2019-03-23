@@ -25,6 +25,7 @@ class IngredientsAdapter(
                 list.add(list.last() + lists.last().size)
             }
             list
+
         }
         ingredientList = lists.flatten()
     }
