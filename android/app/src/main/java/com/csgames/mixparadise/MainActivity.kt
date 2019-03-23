@@ -66,9 +66,15 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Example of a serving call
-        /*
 
-        val ings: List<SendableIngredient> = Arrays.asList(SendableIngredient("orange", 2), SendableIngredient("ice", 1))
+
+        val ings: List<SendableIngredient> = Arrays.asList(
+            SendableIngredient("grapefruit", 1),
+            SendableIngredient("cherry", 2),
+            SendableIngredient("7up", 1),
+            SendableIngredient("tequila", 2),
+            SendableIngredient("ice", 2),
+            SendableIngredient("mint", 1))
 
         Api.drinkService.serveDrink(ings).enqueue(
             object : Callback<ServeResponse> {
@@ -83,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        */
+
 
         setupListeners(blender, ingredientsDialog)
     }
