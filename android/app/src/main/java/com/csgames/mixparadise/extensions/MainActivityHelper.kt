@@ -7,8 +7,14 @@ import android.view.ViewGroup
 import androidx.core.view.doOnLayout
 import com.csgames.mixparadise.Blender
 import com.csgames.mixparadise.MainActivity
+import com.csgames.mixparadise.api.Api
+import com.csgames.mixparadise.api.IngredientResponse
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.view_blender_with_table.*
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 private const val ADD_INGREDIENTS_FRAGMENT_TAG = "ADD_INGREDIENTS_FRAGMENT_TAG"
 
@@ -59,7 +65,6 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
             )
         }
 
-        // TODO: remove me
         blender.addLiquid("temp", "#A66C1E", 1f)
 
         ingredientsDialog.show(supportFragmentManager, ADD_INGREDIENTS_FRAGMENT_TAG)
