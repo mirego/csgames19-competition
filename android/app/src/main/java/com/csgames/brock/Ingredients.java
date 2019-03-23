@@ -1,4 +1,5 @@
 package com.csgames.brock;
+import androidx.annotation.NonNull;
 import com.csgames.brock.Drink;
 
 import java.util.ArrayList;
@@ -41,5 +42,11 @@ public class Ingredients {
 
 	public void setAlcohols(ArrayList<Drink> alcohols) {
 		this.alcohols = alcohols;
+	}
+
+	@NonNull
+	@Override
+	public String toString() {
+		return "what";
 	}
 }
