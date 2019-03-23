@@ -8,12 +8,12 @@ import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface DrinkService {
-    // TODO: get ingredients
+
     @Headers("Team: xargonauts")
     @GET("ingredients")
     fun getIngredients(): Call<IngredientList>
 
-    // TODO: serve call
+
     @Headers("Team: xargonauts")
     @POST("serve")
     fun submitRecipe(): Call<RecipeIngredient>

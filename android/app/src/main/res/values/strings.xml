@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Mix Paradise</string>
 
-    <string name="ingredients_dialog_title">Add ingredients</string>
-    <string name="ingredients_dialog_subtitle">Tap on an ingredient to add it\nautomatically in the blender</string>
+    <string name="ingredients_dialog_title">UQAM EN GREVE!</string>
+    <string name="ingredients_dialog_subtitle">Houston, we have a problem! - Apollo 13</string>
     <string name="juice_section_title">Juice</string>
     <string name="drink_section_title">Soft Drinks</string>
     <string name="ingredient_section_title">Ingredients</string>
