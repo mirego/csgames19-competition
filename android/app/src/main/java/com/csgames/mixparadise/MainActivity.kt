@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         // test 123
         Api.drinkService.getIngredients().enqueue(object : Callback<IngredientsResponse> {
             override fun onResponse(call: Call<IngredientsResponse>, response: Response<IngredientsResponse>) {
+                MixParadiseApplication.ingredients = response.body()!!
                 val juices = response.body()!!.juices
                 val alcohols = response.body()!!.alcohols
                 val drinks = response.body()!!.drinks
