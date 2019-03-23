@@ -27,7 +27,7 @@ object Api {
     }
 
     @TargetApi(26)
-    fun createHeader(key: String = "tv8PDnId7ylIwGEQ5naooq3wnL205RNR") {
+    fun createHeader(key: String = "tv8PDnId7ylIwGEQ5naooq3wnL205RNR"): String {
 
         val now = LocalDateTime.now(ZoneOffset.UTC)
         // LocalDateTime to epoch seconds
@@ -40,8 +40,10 @@ object Api {
         val bytes = text.toByteArray()
         val md = MessageDigest.getInstance("SHA-1")
         val digest = md.digest(bytes)
-        for (byte in digest) print("%02x".format(byte))
+        var stringKey = ""
+        for (byte in digest) stringKey+= "%02x".format(byte)
         println()
+        return stringKey
     }
 
     val drinkService: DrinkService by lazy { retrofit.create(DrinkService::class.java) }
