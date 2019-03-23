@@ -22,5 +22,16 @@ object Api {
             .build()
     }
 
+    fun setAuthRequest(key: String, context: Context) {
+        val okHttpClient = OkHttpClient.Builder()
+            .cache(Cache(File(context.cacheDir, "http-cache"), 10 * 1024 * 1024))
+            .addInterceptor(HeadersInterceptor())
+            .build()
+
+        retrofit.newBuilder()
+            .client(okHttpClient)
+    }
+
     val drinkService: DrinkService by lazy { retrofit.create(DrinkService::class.java) }
+
 }
