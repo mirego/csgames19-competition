@@ -2,7 +2,11 @@ package com.csgames.mixparadise.model
 
 import java.util.*
 
-class IngredientList {
+class IngredientList(
+    val drinks: List<Drink>,
+    val juices: List<Juice>,
+    val ingredients: List<Ingredient>
+) {
 
     data class Drink(
         val id: String,

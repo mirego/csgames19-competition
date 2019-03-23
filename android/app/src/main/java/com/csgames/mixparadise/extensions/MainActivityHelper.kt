@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.core.view.doOnLayout
 import com.csgames.mixparadise.Blender
 import com.csgames.mixparadise.MainActivity
+import com.csgames.mixparadise.api.Api.drinkService
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.model.IngredientList
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 
 private const val ADD_INGREDIENTS_FRAGMENT_TAG = "ADD_INGREDIENTS_FRAGMENT_TAG"
@@ -50,6 +52,17 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
     addIngredientsButton.setOnClickListener {
         if (ingredientsDialog.isAdded) {
             return@setOnClickListener
+        }
+
+
+        // You know nothing Jon Snow! ¯\_(ツ)_/¯
+        val result = drinkService.getIngredients().execute().body()
+        val juices = result?.juices
+
+        if (juices != null) {
+            for (j in juices) {
+                System.out.println(j)
+            }
         }
 
         ingredientsDialog.arguments = Bundle().apply {
