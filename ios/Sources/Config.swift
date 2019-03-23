@@ -9,5 +9,5 @@
 import Foundation
 
 class Config {
-    let host: String = "https://mirego-csgames19.herokuapp.com/"
+    static let host: String = "https://mirego-csgames19.herokuapp.com/"
 }

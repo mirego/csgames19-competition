@@ -10,6 +10,7 @@ class IngredientsPickerView: UIView {
 
     private let closeButton = ExtendedButton(type: .custom)
     private let loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    private var ingredients: [Ingredient]?
 
     weak var delegate: IngredientsPickerViewDelegate?
 
@@ -41,5 +42,10 @@ class IngredientsPickerView: UIView {
         super.layoutSubviews()
         closeButton.pin.top(IngredientsPickerView.sidePadding).right(IngredientsPickerView.sidePadding).sizeToFit()
         loadingIndicator.pin.center()
+    }
+
+    func configure(ingredients: [Ingredient]) {
+        self.ingredients = ingredients
+        // todo update ui
     }
 }

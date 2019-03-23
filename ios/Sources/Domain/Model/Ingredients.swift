@@ -6,8 +6,10 @@
 //  Copyright © 2019 Mirego. All rights reserved.
 //
 
-import Foundation
 
-class Ingredients {
-
+class Ingredients: Decodable {
+    let juices: [Liquid]
+    let drinks: [Liquid]
+    let ingredients: [Solid]
+    let alcohols: [Liquid]
 }

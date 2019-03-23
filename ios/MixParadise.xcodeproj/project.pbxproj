@@ -42,6 +42,11 @@
 		E1E8CC1822357D4E0071D5C3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1022357D4E0071D5C3 /* Montserrat-Regular.otf */; };
 		E1E8CC1922357D4E0071D5C3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */; };
 		E1E8CC1A22357D4E0071D5C3 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */; };
+		FE13B0102246AE83008C8AE6 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13B00F2246AE83008C8AE6 /* ServiceFactory.swift */; };
+		FE13B0122246AED0008C8AE6 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13B0112246AED0008C8AE6 /* IngredientService.swift */; };
+		FE13B0182246AFFF008C8AE6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13B0172246AFFF008C8AE6 /* Ingredient.swift */; };
+		FE13B01A2246B039008C8AE6 /* Liquid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13B0192246B039008C8AE6 /* Liquid.swift */; };
+		FE13B01C2246B096008C8AE6 /* Solid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13B01B2246B096008C8AE6 /* Solid.swift */; };
 		FE41CEE92246A79E00F9136E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE42246A79D00F9136E /* Request.swift */; };
 		FE41CEEA2246A79E00F9136E /* String+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE52246A79D00F9136E /* String+FrigKit.swift */; };
 		FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */; };
@@ -98,6 +103,11 @@
 		E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		F261BA5C869B21CEE859688B /* Pods-MixParadise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.debug.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.debug.xcconfig"; sourceTree = "<group>"; };
+		FE13B00F2246AE83008C8AE6 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		FE13B0112246AED0008C8AE6 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
+		FE13B0172246AFFF008C8AE6 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		FE13B0192246B039008C8AE6 /* Liquid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
+		FE13B01B2246B096008C8AE6 /* Solid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solid.swift; sourceTree = "<group>"; };
 		FE41CEE42246A79D00F9136E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FE41CEE52246A79D00F9136E /* String+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FrigKit.swift"; sourceTree = "<group>"; };
 		FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FrigKit.swift"; sourceTree = "<group>"; };
@@ -328,6 +338,7 @@
 			children = (
 				FE41CEF22246AA0800F9136E /* Service */,
 				FE41CEF12246A9FC00F9136E /* Model */,
+				FE13B00F2246AE83008C8AE6 /* ServiceFactory.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -336,6 +347,9 @@
 			isa = PBXGroup;
 			children = (
 				FE41CEF32246AA8C00F9136E /* Ingredients.swift */,
+				FE13B0172246AFFF008C8AE6 /* Ingredient.swift */,
+				FE13B0192246B039008C8AE6 /* Liquid.swift */,
+				FE13B01B2246B096008C8AE6 /* Solid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +357,7 @@
 		FE41CEF22246AA0800F9136E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FE13B0112246AED0008C8AE6 /* IngredientService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -461,6 +476,7 @@
 				FE41CEEF2246A96A00F9136E /* Config.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
+				FE13B0182246AFFF008C8AE6 /* Ingredient.swift in Sources */,
 				E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */,
 				FE41CEF62246ABC100F9136E /* Extensions.swift in Sources */,
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
@@ -470,15 +486,19 @@
 				E1E8CBC7223336AA0071D5C3 /* ViewControllerFactory.swift in Sources */,
 				E1E8CBCA2233390B0071D5C3 /* BaseViewController.swift in Sources */,
 				E158FC3722443F73000EA79B /* ProgressView.swift in Sources */,
+				FE13B01A2246B039008C8AE6 /* Liquid.swift in Sources */,
 				E1E8CBC2223335EC0071D5C3 /* RootView.swift in Sources */,
 				E158FC2A224317C2000EA79B /* PopUpTransition.swift in Sources */,
 				094425922235800100F15D5E /* GameScene.m in Sources */,
 				E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */,
 				E1E8CBF4223358080071D5C3 /* ComponentFactory.swift in Sources */,
+				FE13B0102246AE83008C8AE6 /* ServiceFactory.swift in Sources */,
 				FE41CEE92246A79E00F9136E /* Request.swift in Sources */,
 				E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */,
 				E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */,
 				FE41CEEA2246A79E00F9136E /* String+FrigKit.swift in Sources */,
+				FE13B01C2246B096008C8AE6 /* Solid.swift in Sources */,
+				FE13B0122246AED0008C8AE6 /* IngredientService.swift in Sources */,
 				FE41CEEC2246A79E00F9136E /* UIView+FrigKit.swift in Sources */,
 				09442599223581D100F15D5E /* LiquidScene.swift in Sources */,
 				E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */,
