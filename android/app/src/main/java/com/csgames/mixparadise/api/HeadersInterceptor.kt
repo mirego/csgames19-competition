@@ -1,19 +1,16 @@
 package com.csgames.mixparadise.api
 
+import android.text.format.Time
 import com.csgames.mixparadise.HashUtils
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
-import java.sql.Time
 
-class HeadersInterceptor () : Interceptor {
+class HeadersInterceptor(val key: String) : Interceptor {
         override fun intercept(chain: Interceptor.Chain?): Response {
             chain?.let {
-                val testTime = Time(1553349480).time
-                //val timeLong = System.currentTimeMillis() / 1000 / 60
-                val timeLong = testTime / 1000 / 60
-                val time = timeLong.toString()
-                val textToHash = "csgames19-$time"
+                val time = System.currentTimeMillis()/1000/60
+                val textToHash = "csgames19-$time-$key"
                 val token  =  HashUtils().sha1( textToHash)
 
                 val requestBuilder = it.request().newBuilder()
