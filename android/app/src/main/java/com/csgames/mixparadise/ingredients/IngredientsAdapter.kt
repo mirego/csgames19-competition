@@ -3,6 +3,7 @@ package com.csgames.mixparadise.ingredients
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.csgames.mixparadise.R
@@ -15,6 +16,7 @@ class IngredientsAdapter(
     private val onIngredientSelected: IngredientSelectedListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val ingredientList: List<Ingredient>
+    private val valueCountMap: MutableMap<String, Int>
     private var headerPositions = List(4) { 0 }
 
     init {
@@ -27,6 +29,7 @@ class IngredientsAdapter(
             list
         }
         ingredientList = lists.flatten()
+        valueCountMap = ingredientList.associate { it.id to 0 }.toMutableMap()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -55,7 +58,13 @@ class IngredientsAdapter(
                     .with(imageView)
                     .load(ingredient.imageUrl)
                     .into(imageView)
-                itemView.setOnClickListener { onIngredientSelected(ingredient) }
+                itemView.setOnClickListener {
+                    onIngredientSelected(ingredient)
+                    valueCountMap[ingredient.id] = valueCountMap.getValue(ingredient.id) + 1
+                    notifyItemChanged(adapterPosition)
+                }
+                countContainer.isVisible = valueCountMap.getValue(ingredient.id) > 0
+                count.text = valueCountMap.getValue(ingredient.id).toString()
             }
         }
     }
