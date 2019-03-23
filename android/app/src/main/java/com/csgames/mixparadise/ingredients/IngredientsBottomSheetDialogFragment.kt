@@ -4,16 +4,22 @@ import android.os.Bundle
 import android.view.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.api.Api
 import com.csgames.mixparadise.extensions.setImmersiveMode
+import com.csgames.mixparadise.model.IngredentEndPointRes
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import androidx.recyclerview.widget.LinearLayoutManager
+
 
 typealias IngredientSelectedListener = (
     id: String
 ) -> Unit
 
 class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
-
     companion object {
         const val INGREDIENTS_ID_TO_OUNCES_MAP_KEY = "INGREDIENTS_ID_TO_OUNCES_MAP_KEY"
     }
@@ -32,6 +38,19 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        val adapter = IngredientsAdapter()
+        dialogView.ingredients.adapter = adapter
+        dialogView.ingredients.layoutManager = LinearLayoutManager(dialogView.context)
+        Api.drinkService.getIngredients().enqueue(object : Callback<IngredentEndPointRes> {
+            override fun onFailure(call: Call<IngredentEndPointRes>?, t: Throwable?) {
+
+            }
+            override fun onResponse(call: Call<IngredentEndPointRes>?, response: Response<IngredentEndPointRes>?) {
+                val res = response?.body()
+                adapter.update(res?.ingredients)
+            }
+
+        })
     }
 
     fun setIngredientSelectedListener(ingredientSelectedListener: IngredientSelectedListener) {
