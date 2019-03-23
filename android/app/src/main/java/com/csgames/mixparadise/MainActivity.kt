@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setupStackView()
         setupSolidIngredientsWrapper()
 
+        
         blender = Blender(wave, stackView, solidIngredientsContainer, 10, {
             addIngredientsButton.visibility = View.GONE
             serveButton.visibility = View.VISIBLE
