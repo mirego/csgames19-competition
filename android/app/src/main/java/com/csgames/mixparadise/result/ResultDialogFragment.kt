@@ -1,5 +1,6 @@
 package com.csgames.mixparadise.result
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
@@ -25,8 +26,18 @@ class ResultDialogFragment : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_result_dialog, container, false).also {
             setupDialogView(it)
-
             MixParadiseApplication.resetCounts()
+
+            it.btnShare.setOnClickListener(object: View.OnClickListener {
+                override fun onClick(view: View?) {
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_SEND
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_TEXT, serveResponse.rating.comment)
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Bar review!")
+                    startActivity(Intent.createChooser(intent, "Share via"))
+                }
+            })
         }
     }
 
