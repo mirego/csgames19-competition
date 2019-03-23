@@ -1,6 +1,10 @@
 package com.csgames.mixparadise.model
 
-class IngredientList {
+class IngredientList(
+    val drinks: List<Drink>,
+    val juices: List<Juice>,
+    val ingredients: List<Ingredient>
+) {
 
     data class Drink(
         val id: String,
