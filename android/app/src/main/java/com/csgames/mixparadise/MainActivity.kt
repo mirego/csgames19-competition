@@ -10,9 +10,7 @@ import com.csgames.mixparadise.api.DrinkService
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientCallback
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
-import com.csgames.mixparadise.model.Ingredient
-import com.csgames.mixparadise.model.IngredientsResponse
-import com.csgames.mixparadise.model.Juice
+import com.csgames.mixparadise.model.*
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
 import retrofit2.Call
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity(), IngredientCallback {
             addIngredientsButton.visibility = View.GONE
             serveButton.visibility = View.VISIBLE
         }) {
-            showResultDialog()
+
         }
 
         // test 123
@@ -58,13 +56,43 @@ class MainActivity : AppCompatActivity(), IngredientCallback {
 
         })
         setupListeners(blender, ingredientsDialog)
+
+        serveButton.setOnClickListener {
+            blender.empty()
+            addIngredientsButton.visibility = View.VISIBLE
+            serveButton.visibility = View.GONE
+
+            val serveItems: ArrayList<ServeItem> = ArrayList()
+            MixParadiseApplication.ingredients.juices
+                .filter { it.count > 0}
+                .forEach{ serveItems.add(ServeItem(it.id, it.count))}
+            MixParadiseApplication.ingredients.drinks
+                .filter { it.count > 0}
+                .forEach{ serveItems.add(ServeItem(it.id, it.count))}
+            MixParadiseApplication.ingredients.ingredients
+                .filter { it.count > 0}
+                .forEach{ serveItems.add(ServeItem(it.id, it.count))}
+            MixParadiseApplication.ingredients.alcohols
+                .filter { it.count > 0 }
+                .forEach{ serveItems.add(ServeItem(it.id, it.count))}
+
+            Api.drinkService.serveRecipe(serveItems.toList()).enqueue(object: Callback<ServeResponse> {
+                override fun onResponse(call: Call<ServeResponse>, response: Response<ServeResponse>) {
+                    d("on serve raw", response.body().toString())
+                    showResultDialog(response.body()!!)
+                }
+                override fun onFailure(call: Call<ServeResponse>, t: Throwable) {
+                }
+            })
+        }
+
     }
 
-    private fun showResultDialog() {
+    private fun showResultDialog(serveResponse: ServeResponse) {
         if (resultDialog.isAdded) {
             return
         }
-
+        resultDialog.serveResponse = serveResponse
         resultDialog.show(supportFragmentManager, RESULT_FRAGMENT_TAG)
     }
 

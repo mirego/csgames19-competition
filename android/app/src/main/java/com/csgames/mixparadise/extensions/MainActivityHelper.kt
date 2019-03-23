@@ -50,33 +50,6 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
         true
     }
 
-    serveButton.setOnClickListener {
-        blender.empty()
-        addIngredientsButton.visibility = View.VISIBLE
-        serveButton.visibility = View.GONE
-
-        val serveItems: ArrayList<ServeItem> = ArrayList()
-        MixParadiseApplication.ingredients.juices
-            .filter { it.count > 0}
-            .forEach{ serveItems.add(ServeItem(it.id, it.count))}
-        MixParadiseApplication.ingredients.drinks
-            .filter { it.count > 0}
-            .forEach{ serveItems.add(ServeItem(it.id, it.count))}
-        MixParadiseApplication.ingredients.ingredients
-            .filter { it.count > 0}
-            .forEach{ serveItems.add(ServeItem(it.id, it.count))}
-        MixParadiseApplication.ingredients.alcohols
-            .filter { it.count > 0 }
-            .forEach{ serveItems.add(ServeItem(it.id, it.count))}
-
-        Api.drinkService.serveRecipe(serveItems.toList()).enqueue(object: Callback<ServeResponse> {
-            override fun onResponse(call: Call<ServeResponse>, response: Response<ServeResponse>) {
-                d("on serve raw", response.body().toString())
-            }
-            override fun onFailure(call: Call<ServeResponse>, t: Throwable) {
-            }
-        })
-    }
 
     addIngredientsButton.setOnClickListener {
         if (ingredientsDialog.isAdded) {

@@ -12,12 +12,15 @@ import kotlinx.android.synthetic.main.view_result_dialog.view.*
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.doOnLayout
 import com.csgames.mixparadise.MixParadiseApplication
+import com.csgames.mixparadise.model.ServeResponse
 import nl.dionsegijn.konfetti.KonfettiView
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
 
 
 class ResultDialogFragment : DialogFragment() {
+
+    lateinit var serveResponse : ServeResponse
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_result_dialog, container, false).also {
@@ -37,12 +40,12 @@ class ResultDialogFragment : DialogFragment() {
             WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
 
         dialogView.percentage.text =
-            String.format(requireContext().getString(R.string.percentage), 50)
-        dialogView.comment.text = "mmhhh"
+            String.format(requireContext().getString(R.string.percentage), serveResponse.rating.note)
+        dialogView.comment.text = serveResponse.rating.comment
 
-        setProgress(dialogView.taste_progress_container, R.id.taste_progress, 50 / 100f)
-        setProgress(dialogView.volume_progress_container, R.id.volume_progress, 50 / 100f)
-        setProgress(dialogView.strength_progress_container, R.id.strength_progress, 50 / 100f)
+        setProgress(dialogView.taste_progress_container, R.id.taste_progress, serveResponse.review.taste.toFloat() / 100f)
+        setProgress(dialogView.volume_progress_container, R.id.volume_progress, serveResponse.review.volume.toFloat()  / 100f)
+        setProgress(dialogView.strength_progress_container, R.id.strength_progress, serveResponse.review.strength.toFloat() / 100f)
     }
 
     private fun setProgress(constraintLayout: ConstraintLayout, @IdRes progressViewId: Int, percentage: Float) {
