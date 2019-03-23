@@ -1,8 +1,8 @@
 ## Team
 
-**Team Name:** Cruisaders
-**Team Number:** 1
-**University:** Concordia University
+**Team Name:** Cruisaders   
+**Team Number:** 1   
+**University:** Concordia University    
 
 **Authors:**
 - Erin Benderoff
@@ -19,10 +19,10 @@
 | Fetch ingredients from the server               | ✔         |
 | Fetch secret ingredients from the server        | ✔         |
 | Show the ingredients list                       | ✔         |
-| Tap on an ingredient to add it in the mixer     | x         |
-| Show the count of added ingredients             | x         |
-| Resulting liquid color                          | x         |
-| Fetch results form the server                   | ✔         |
+| Tap on an ingredient to add it in the mixer     | X         |
+| Show the count of added ingredients             | X         |
+| Resulting liquid color                          | X         |
+| Fetch results form the server                   | ✔ (50%)   |
 
 **Your best recipe:**
 - grapefruit x1
