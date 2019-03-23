@@ -3,6 +3,8 @@ package com.csgames.mixparadise.ingredients
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.api.Api
@@ -11,6 +13,7 @@ import com.csgames.mixparadise.api.dto.IngredientCategoryAssembler
 import com.csgames.mixparadise.extensions.setImmersiveMode
 import com.csgames.mixparadise.model.IngredientCategory
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +30,6 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
     private var ingredientSelectedListener: IngredientSelectedListener? = null
-    private var ingredientsCategory: List<IngredientCategory> = arrayListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_ingredients_dialog, container, false).also {
@@ -40,12 +42,14 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         Api.drinkService.getIngredients().enqueue(object : Callback<GetIngredientsResponse> {
             override fun onResponse(call: Call<GetIngredientsResponse>, response: Response<GetIngredientsResponse>) {
                 response.body()?.let { ingredientsResponse ->
-                    ingredientsCategory = IngredientCategoryAssembler.from(ingredientsResponse)
+                    ingredients_categories_recyclerview?.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+                    val adapter = IngredientCategoriesAdapter()
+                    adapter.ingredientsCategories = IngredientCategoryAssembler.from(ingredientsResponse)
+                    ingredients_categories_recyclerview?.adapter = adapter
                 }
             }
 
             override fun onFailure(call: Call<GetIngredientsResponse>, t: Throwable) {
-                Log.d("ICI", "ALLO")
             }
         })
     }
