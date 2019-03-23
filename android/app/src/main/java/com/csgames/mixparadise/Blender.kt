@@ -62,8 +62,12 @@ class Blender(
             stackView.addView(this, 0)
         }
 
+        val label = ""
+        val type = "liquid"
+        val imageUrl = ""
+
         addIngredientToMap(id)
-        stackedIngredients.add(StackedIngredient(color, opacity))
+        stackedIngredients.add(StackedIngredient(color, opacity, id, label, type, imageUrl))
     }
 
     fun addSolidIngredient() {

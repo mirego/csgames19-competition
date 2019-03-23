@@ -15,4 +15,7 @@
     <string name="taste">👌  Taste</string>
     <string name="volume">⚗️  Volume</string>
     <string name="strength">💪️  Strength</string>
+    <string name="soft_drinks">Soft Drinks</string>
+    <string name="juice">Juice</string>
+    <string name="ingredients">Ingredients</string>
 </resources>
