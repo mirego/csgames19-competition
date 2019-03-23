@@ -1,0 +1,12 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Kingfisher" "${PODS_ROOT}/Headers/Public/SwiftHEXColors"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ActionKit" "${PODS_CONFIGURATION_BUILD_DIR}/Cheers" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher" "${PODS_CONFIGURATION_BUILD_DIR}/MRGTaylor" "${PODS_CONFIGURATION_BUILD_DIR}/PinLayout" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftHEXColors"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ActionKit/ActionKit.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Cheers/Cheers.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MRGTaylor/MRGTaylor.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/PinLayout/PinLayout.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftHEXColors/SwiftHEXColors.modulemap" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Kingfisher" -isystem "${PODS_ROOT}/Headers/Public/SwiftHEXColors"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"ActionKit" -l"Cheers" -l"Kingfisher" -l"MRGTaylor" -l"PinLayout" -l"SwiftHEXColors" -framework "Accelerate" -framework "CFNetwork" -framework "CoreGraphics" -framework "Foundation" -framework "UIKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ActionKit/ActionKit.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Cheers/Cheers.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/MRGTaylor/MRGTaylor.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/PinLayout/PinLayout.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftHEXColors/SwiftHEXColors.modulemap"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ActionKit" "${PODS_CONFIGURATION_BUILD_DIR}/Cheers" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher" "${PODS_CONFIGURATION_BUILD_DIR}/MRGTaylor" "${PODS_CONFIGURATION_BUILD_DIR}/PinLayout" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftHEXColors"

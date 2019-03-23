@@ -1,0 +1,6 @@
+module Pods_MixParadise {
+  umbrella header "Pods-MixParadise-umbrella.h"
+
+  export *
+  module * { export * }
+}
