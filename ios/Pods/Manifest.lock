@@ -1,0 +1,36 @@
+PODS:
+  - ActionKit (2.5.1)
+  - Cheers (2.2.0)
+  - Kingfisher (5.2.0)
+  - MRGTaylor (1.5.0)
+  - PinLayout (1.8.6)
+  - SwiftHEXColors (1.2.0)
+
+DEPENDENCIES:
+  - ActionKit
+  - Cheers
+  - Kingfisher
+  - MRGTaylor
+  - PinLayout
+  - SwiftHEXColors
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionKit
+    - Cheers
+    - Kingfisher
+    - MRGTaylor
+    - PinLayout
+    - SwiftHEXColors
+
+SPEC CHECKSUMS:
+  ActionKit: 6f4f5fbab3a76aa05e8df8d66145db4fe9e9b8df
+  Cheers: 989a480646acb20100665fce282aba8f2b5c452f
+  Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  MRGTaylor: deb2314e4ac5acc89facc1247047527c8464886d
+  PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
+  SwiftHEXColors: a4ebe93a70890a9fa124e205dd785cc7552273b4
+
+PODFILE CHECKSUM: dfeb768a733c98a8550fbb9541363dcaa27061f2
+
+COCOAPODS: 1.6.1
