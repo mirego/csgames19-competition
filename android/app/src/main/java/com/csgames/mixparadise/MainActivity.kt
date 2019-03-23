@@ -1,13 +1,26 @@
 package com.csgames.mixparadise
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.csgames.mixparadise.api.Api
+import com.csgames.mixparadise.api.Model
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+private val charPool : List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+
+public val randomKeyString = (1..32)
+    .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
+    .map(charPool::get)
+    .joinToString("");
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +48,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupListeners(blender, ingredientsDialog)
+
+//        val call = Api.drinkService.getIngredients()
+//
+//        call.enqueue(object : Callback<Model.Result> {
+//            override fun onFailure(call: Call<Model.Result>?, t: Throwable?) {
+//                t?.printStackTrace()
+//            }
+//
+//            override fun onResponse(call: Call<Model.Result>?, response: Response<Model.Result>?) {
+//                // Initialize a new instance of
+//                val builder = AlertDialog.Builder(this@MainActivity)
+//
+//                // Set the alert dialog title
+//                builder.setTitle("Waza")
+//
+//                // Display a message on alert dialog
+//                builder.setMessage(response?.body()?.alcohols?.size.toString())
+//
+//                // Finally, make the alert dialog using builder
+//                val dialog: AlertDialog = builder.create()
+//
+//                // Display the alert dialog on app interface
+//                dialog.show()
+//            }
+//        })
     }
 
     private fun showResultDialog() {
