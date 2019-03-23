@@ -44,7 +44,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Api.drinkService.listIngredients().enqueue(object : Callback<Ingredients> {
+        Api.drinkService.listIngredients(Api.createHeader()).enqueue(object : Callback<Ingredients> {
             override fun onFailure(call: Call<Ingredients>, t: Throwable) {
                 Log.e("FAILLLLLLLL", t.message)
             }
