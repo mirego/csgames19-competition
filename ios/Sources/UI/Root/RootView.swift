@@ -140,9 +140,25 @@ class RootView: UIView {
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { data, response, error in
-            if let json = try? JSONSerialization.jsonObject(with: data!, options: []) {
-                print(json)
+            guard let data = data else{
+                //Same as above
+                return
             }
+            
+            do {
+                let collectionData = try JSONDecoder().decode(GenCollection.self, from: data)
+                let juiceCount = collectionData.juices.count
+                for iter in 0...juiceCount-1{
+                    print(collectionData.juices[iter])
+                }
+                let drinkCount = collectionData.drinks.count
+                for iter in 0...drinkCount-1{
+                    print(collectionData.drinks[iter])
+                }
+            } catch let err {
+                print(err.localizedDescription)
+            }
+            
         }
         
         task.resume()
