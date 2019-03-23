@@ -1,11 +1,14 @@
 import UIKit
 
 class IngredientsPickerViewController: BaseViewController {
+    let service: IngredientService
+
     private var mainView: IngredientsPickerView {
         return self.view as! IngredientsPickerView
     }
 
-    init() {
+    init(_ service: IngredientService) {
+        self.service = service
         super.init(nibName: nil, bundle: nil)
 
         modalPresentationStyle = .custom
@@ -25,6 +28,17 @@ class IngredientsPickerViewController: BaseViewController {
         super.viewDidLoad()
 
         mainView.isLoading = true
+        self.service.getList { (ingredients, error) in
+            guard error == nil else {
+                let alert = UIAlertController(title: "Error", message: "Could not get your paradise, mix again later.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+
+            self.mainView.configure(ingredients: ingredients!)
+            self.mainView.isLoading = false
+        }
     }
 }
 

@@ -82,6 +82,7 @@ class RootView: UIView {
             self?.addIngredientButton.isEnabled = false
             self?.serveButton.isEnabled = true
             self?.scene?.blendColors(finalColor: UIColor.purple)
+            print("yo")
         }
 
         serveButton.isEnabled = false
@@ -135,6 +136,23 @@ class RootView: UIView {
         scene?.addColor(color: UIColor.red)
     }
 
+//    func addIngredient(ingredient: Ingredients) {
+//        pushButton.isEnabled = true
+//
+//        if(ingredient.type == "liquid"){
+//            scene?.addColor(color: UIColor(hexString: ingredient.color)!)
+//        } else if(ingredient.type == "solid"){
+//            var image: UIImage?
+//            let urlString = ingredient.imageUrl
+//
+//            let url = NSURL(string: urlString)! as URL
+//            if let imageData: NSData = NSData(contentsOf: url) {
+//                image = UIImage(data: imageData as Data)
+//            }
+//            scene?.addSolid(image: image)
+//        }
+//    }
+    
     func resetBlender() {
         scene?.resetContent()
         addIngredientButton.isEnabled = true
