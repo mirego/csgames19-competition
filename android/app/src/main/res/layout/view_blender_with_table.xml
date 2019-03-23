@@ -110,7 +110,7 @@
         android:drawablePadding="8dp"
         android:fontFamily="@font/montserrat_bold"
         android:foreground="?selectableItemBackground"
-        android:text="@string/add_ingredients_button"
+        android:text="Bye Felicia!"
         android:textColor="@color/dark_blue_grey"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/table"
