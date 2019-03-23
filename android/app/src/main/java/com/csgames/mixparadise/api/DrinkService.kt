@@ -1,7 +1,14 @@
 package com.csgames.mixparadise.api
 
-interface DrinkService {
-    // TODO: get ingredients
+import com.csgames.mixparadise.model.IngredientsResponse
+import com.csgames.mixparadise.model.ServedDrinkResponse
+import retrofit2.http.GET
+import retrofit2.http.POST
 
-    // TODO: serve call
+interface DrinkService {
+    @GET("/ingredients")
+    fun getIngredients(): IngredientsResponse
+
+    @POST("/serve")
+    fun serveBeverage(): ServedDrinkResponse
 }

@@ -13,6 +13,14 @@ object Api {
     fun init(context: Context) {
         val okHttpClient = OkHttpClient.Builder()
             .cache(Cache(File(context.cacheDir, "http-cache"), 10 * 1024 * 1024))
+            .addInterceptor {
+                val originalRequest = it.request()
+                val requestBuilder = originalRequest
+                    .newBuilder()
+                    .addHeader("Team", "HeisenBug")
+                val request = requestBuilder.build()
+                it.proceed(request)
+            }
             .build()
 
         retrofit = Retrofit.Builder()
