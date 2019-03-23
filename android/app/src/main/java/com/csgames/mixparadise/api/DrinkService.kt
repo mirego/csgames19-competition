@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface DrinkService {
     @GET("/ingredients")
-    fun getIngredients() : Call<List<GetIngredientsResponse>>
+    fun getIngredients() : Call<GetIngredientsResponse>
 
     @POST("/serve")
     fun serve(@Body serveRequest: PostServeRequest) : Call<PostServeResponse>
