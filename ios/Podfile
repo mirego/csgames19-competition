@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:mirego/MCPodSpecs.git'
+
+platformVersion = '12.0'
+platform :ios, platformVersion
+
+inhibit_all_warnings!
+
+target 'MixParadise' do
+    pod 'MRGTaylor'
+    pod 'PinLayout'
+    pod 'ActionKit'
+    pod 'Kingfisher'
+    pod 'Cheers'
+    pod 'SwiftHEXColors'
+end
