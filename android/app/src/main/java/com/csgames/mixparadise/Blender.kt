@@ -7,6 +7,7 @@ import com.gelitenight.waveview.library.WaveView
 import android.view.animation.LinearInterpolator
 import android.animation.ValueAnimator
 import android.graphics.Color
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
@@ -109,26 +110,28 @@ class Blender(
 
         // TODO: mix the liquid ingredients color
         waveView.alpha = 1f
-        setWaveColor(Color.parseColor("#A66C1E"))
-//        setWaveColor(Color.parseColor(mixColors(*stackedIngredients.toTypedArray())))
+//        setWaveColor(Color.parseColor("#A66C1E"))
+        setWaveColor(Color.parseColor(mixColors(*stackedIngredients.toTypedArray())))
 
     }
 
 
     private fun mixColors(vararg colors: StackedIngredient): String {
-        val ratio = 1f / ( colors.size);
+        val ratio = 1f / (colors.size);
         var r = 0f
         var g = 0f
         var b = 0f
         var a = 0f
-       colors.forEach {
-           val argb = Color.parseColor("#${Integer.toHexString((it.opacity * 255).toInt())}${it.color}");
-            a += ((argb shr  24) and 0xff) * ratio;
+        colors.forEach {
+            val argb =
+                Color.parseColor("#${Integer.toHexString((it.opacity * 255).toInt())}${it.color.replace("#", "")}");
+            a += ((argb shr 24) and 0xff) * ratio;
             r += ((argb shr 16) and 0xff) * ratio;
-            g += ((argb shr  8 ) and  0xff) * ratio;
-            b += ((argb      ) and 0xff) * ratio;
+            g += ((argb shr 8) and 0xff) * ratio;
+            b += ((argb) and 0xff) * ratio;
         }
-        val hex = String.format("#%02x%02x%02x", r, g, b);
+        val hex = String.format("#%02x%02x%02x", r.toInt(), g.toInt(), b.toInt());
+        Log.d("blender", "green");
         return hex;
     }
 
