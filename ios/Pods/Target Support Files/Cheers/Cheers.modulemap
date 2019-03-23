@@ -1,6 +1,0 @@
-module Cheers {
-  umbrella header "Cheers-umbrella.h"
-
-  export *
-  module * { export * }
-}

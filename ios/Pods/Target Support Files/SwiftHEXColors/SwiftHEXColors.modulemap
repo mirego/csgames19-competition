@@ -1,6 +1,0 @@
-module SwiftHEXColors {
-  umbrella header "SwiftHEXColors-umbrella.h"
-
-  export *
-  module * { export * }
-}
