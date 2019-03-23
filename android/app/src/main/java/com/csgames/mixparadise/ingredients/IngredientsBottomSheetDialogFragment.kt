@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.ViewModelProviders.*
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
@@ -46,8 +47,18 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private fun setupDialogView(dialogView: View) {
         Log.d(this::class.java.simpleName, "set up dialog")
         viewModel.ingredients.observe(this, Observer {
-            dialogView.ingredients.adapter = IngredientsAdapter(it)
-            dialogView.ingredients.layoutManager = LinearLayoutManager(requireContext())
+            val adapter = IngredientsAdapter(it)
+            dialogView.ingredients.adapter = adapter
+            dialogView.ingredients.layoutManager = GridLayoutManager(requireContext(), 4).apply {
+                spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return when (adapter.getItemViewType(position)) {
+                            R.layout.view_section_title_item -> 4
+                            else -> 1
+                        }
+                    }
+                }
+            }
         })
         dialogView.close.setOnClickListener {
             dismiss()
