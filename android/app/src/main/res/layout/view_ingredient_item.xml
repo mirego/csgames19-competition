@@ -29,7 +29,7 @@
             android:layout_gravity="center"
             android:layout_margin="13dp"
             android:scaleType="fitCenter"
-            tools:src="@drawable/ic_sun" />
+            android:src="@drawable/ic_sun" />
 
     </androidx.cardview.widget.CardView>
 

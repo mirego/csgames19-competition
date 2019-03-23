@@ -14,8 +14,10 @@ import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.csgames.mixparadise.extensions.lighter
+import com.csgames.mixparadise.ingredients.Ingredient
 import com.csgames.mixparadise.model.StackedIngredient
 import com.google.android.flexbox.FlexboxLayout
+import kotlin.coroutines.coroutineContext
 
 class Blender(
     private val waveView: WaveView,
@@ -66,9 +68,10 @@ class Blender(
         stackedIngredients.add(StackedIngredient(color, opacity))
     }
 
-    fun addSolidIngredient() {
-        addIngredientToMap("ingredientIdReplaceMe")
-
+    fun addSolidIngredient(ingredient: Ingredient) {
+        addIngredientToMap(ingredient.id)
+//        val imView : ImageView = ImageView(context)
+//        solidIngredientsContainer.addView()
         // TODO: add the ingredient visually
     }
 

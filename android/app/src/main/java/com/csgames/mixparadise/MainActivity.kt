@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.csgames.mixparadise.extensions.*
-import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.ingredients.*
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
 
@@ -48,30 +48,31 @@ class MainActivity : AppCompatActivity() {
     override fun onAttachFragment(fragment: Fragment?) {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
-            fragment.setIngredientSelectedListener { id ->
-
+            fragment.setIngredientSelectedListener { ingredient ->
+                when(ingredient){
+                    is Juice -> onJuiceSelected(ingredient)
+                    is Drink -> onDrinkSelected(ingredient)
+                    is Alcohol -> onAlcoholSelected(ingredient)
+                    is Ingredient -> onIngredientSelected(ingredient)
+                }
             }
         }
     }
 
-    // TODO: pass the juice
-    private fun onJuiceSelected() {
-        blender.addLiquid("orange", "#A66C1E", 0.5f)
+    private fun onJuiceSelected(juice: Juice) {
+        blender.addLiquid(juice.id, juice.color, juice.opacity)
     }
 
-    // TODO: pass the drink
-    private fun onDrinkSelected() {
-        blender.addLiquid("pepsi", "#A66C1E", 0.5f)
+    private fun onDrinkSelected(drink: Drink) {
+        blender.addLiquid(drink.id, drink.color, drink.opacity)
     }
 
-    // TODO: pass the ingredient
-    private fun onIngredientSelected() {
-        blender.addSolidIngredient()
+    private fun onIngredientSelected(ingredient: Ingredient) {
+        blender.addSolidIngredient(ingredient)
     }
 
-    // TODO: pass the alcohol
-    private fun onAlcoholSelected() {
-        blender.addLiquid("Four Loko", "#A66C1E", 0.5f)
+    private fun onAlcoholSelected(alcohol: Alcohol) {
+        blender.addLiquid(alcohol.id, alcohol.color, alcohol.opacity)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
