@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             showResultDialog()
         }
 
+
         setupListeners(blender, ingredientsDialog)
     }
 
