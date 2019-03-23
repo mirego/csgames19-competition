@@ -2,12 +2,16 @@ package com.csgames.mixparadise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.csgames.mixparadise.api.Api.drinkService
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +39,30 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupListeners(blender, ingredientsDialog)
+
+        drinkService.ingredients()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                { Log.w("Ingredients", it.toString()) }, //res
+                { Log.e("Ingredients", it.toString()) } //err
+            )
+
+        drinkService.ingredients(getAuthString("easteregg"), "easteregg")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                { Log.w("Alcohol", "Yay! We have alcohol!\n${it.alcohols})") }, //res
+                { Log.e("Alcohol", it.toString()) } //err
+            )
+
+        drinkService.serve(createPerfectDrink())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                { Log.w("Serve", "Yay! A ${it.rating.note} / 100 drink! Jury: ${it.rating.comment}") }, //res
+                { Log.e("Serve", it.toString()) } //err
+            )
     }
 
     private fun showResultDialog() {
@@ -56,12 +84,12 @@ class MainActivity : AppCompatActivity() {
 
     // TODO: pass the juice
     private fun onJuiceSelected() {
-        blender.addLiquid("orange", "#A66C1E", 0.5f)
+        blender.addLiquid("orange", "#FFBC31", 0.5f)
     }
 
     // TODO: pass the drink
     private fun onDrinkSelected() {
-        blender.addLiquid("pepsi", "#A66C1E", 0.5f)
+        blender.addLiquid("pepsi", "#FFBC31", 0.5f)
     }
 
     // TODO: pass the ingredient
@@ -71,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
     // TODO: pass the alcohol
     private fun onAlcoholSelected() {
-        blender.addLiquid("Four Loko", "#A66C1E", 0.5f)
+        blender.addLiquid("Four Loko", "#FFBC31", 0.5f)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

@@ -109,7 +109,7 @@ class Blender(
 
         // TODO: mix the liquid ingredients color
         waveView.alpha = 1f
-        setWaveColor(Color.parseColor("#A66C1E"))
+        setWaveColor(Color.parseColor("#FFBC31"))
     }
 
     fun stop() {
