@@ -2,6 +2,7 @@ PODS:
   - ActionKit (2.5.1)
   - Alamofire (4.8.1)
   - Cheers (2.2.0)
+  - CryptoSwift (0.14.0)
   - Kingfisher (5.2.0)
   - MRGTaylor (1.5.0)
   - PinLayout (1.8.6)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - ActionKit
   - Alamofire
   - Cheers
+  - CryptoSwift
   - Kingfisher
   - MRGTaylor
   - PinLayout
@@ -21,6 +23,7 @@ SPEC REPOS:
     - ActionKit
     - Alamofire
     - Cheers
+    - CryptoSwift
     - Kingfisher
     - MRGTaylor
     - PinLayout
@@ -30,11 +33,12 @@ SPEC CHECKSUMS:
   ActionKit: 6f4f5fbab3a76aa05e8df8d66145db4fe9e9b8df
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Cheers: 989a480646acb20100665fce282aba8f2b5c452f
+  CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   MRGTaylor: deb2314e4ac5acc89facc1247047527c8464886d
   PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
   SwiftHEXColors: a4ebe93a70890a9fa124e205dd785cc7552273b4
 
-PODFILE CHECKSUM: 452ae6f492bc8048708b863c8a8ce0ebf7ae9477
+PODFILE CHECKSUM: 31ab6d09d4f0e081db1a15652e0337cdd3b5386b
 
 COCOAPODS: 1.6.0

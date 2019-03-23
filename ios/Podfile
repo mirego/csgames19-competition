@@ -13,4 +13,5 @@ target 'MixParadise' do
     pod 'Cheers'
     pod 'SwiftHEXColors'
     pod 'Alamofire'
+    pod 'CryptoSwift'
 end
