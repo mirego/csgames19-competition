@@ -47,6 +47,9 @@
 		FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */; };
 		FE41CEEC2246A79E00F9136E /* UIView+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */; };
 		FE41CEED2246A79E00F9136E /* JSONWebToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE82246A79E00F9136E /* JSONWebToken.swift */; };
+		FE41CEEF2246A96A00F9136E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEEE2246A96A00F9136E /* Config.swift */; };
+		FE41CEF42246AA8C00F9136E /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEF32246AA8C00F9136E /* Ingredients.swift */; };
+		FE41CEF62246ABC100F9136E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEF52246ABC100F9136E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +64,9 @@
 		0944258E2235800100F15D5E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0944258F2235800100F15D5E /* Droplet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Droplet.png; sourceTree = "<group>"; };
 		09442598223581D100F15D5E /* LiquidScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidScene.swift; sourceTree = "<group>"; };
+		3D7BD185EF0E7E45833CCE9D /* Pods-MixParadise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.release.xcconfig"; path = "Pods/Target Support Files/Pods-MixParadise/Pods-MixParadise.release.xcconfig"; sourceTree = "<group>"; };
 		735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.release.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.release.xcconfig"; sourceTree = "<group>"; };
+		A1DD7FE909375EDCE8705174 /* Pods-MixParadise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MixParadise/Pods-MixParadise.debug.xcconfig"; sourceTree = "<group>"; };
 		C5AA96444AE6C9D01C7AF0FE /* libPods-MixParadise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MixParadise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1540542220E5B9A00188638 /* MixParadise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixParadise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1540545220E5B9A00188638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 		FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FrigKit.swift"; sourceTree = "<group>"; };
 		FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FrigKit.swift"; sourceTree = "<group>"; };
 		FE41CEE82246A79E00F9136E /* JSONWebToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWebToken.swift; sourceTree = "<group>"; };
+		FE41CEEE2246A96A00F9136E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FE41CEF32246AA8C00F9136E /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		FE41CEF52246ABC100F9136E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,11 +159,13 @@
 		E1540544220E5B9A00188638 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FE41CEF02246A9EF00F9136E /* Domain */,
 				FE41CEE32246A78500F9136E /* Helpers */,
-				E1540545220E5B9A00188638 /* AppDelegate.swift */,
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
 				E1540559220E5E8500188638 /* SupportingFiles */,
+				FE41CEEE2246A96A00F9136E /* Config.swift */,
+				E1540545220E5B9A00188638 /* AppDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			children = (
 				F261BA5C869B21CEE859688B /* Pods-MixParadise.debug.xcconfig */,
 				735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */,
+				A1DD7FE909375EDCE8705174 /* Pods-MixParadise.debug.xcconfig */,
+				3D7BD185EF0E7E45833CCE9D /* Pods-MixParadise.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 		FE41CEE32246A78500F9136E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FE41CEF52246ABC100F9136E /* Extensions.swift */,
 				FE41CEE82246A79E00F9136E /* JSONWebToken.swift */,
 				FE41CEE42246A79D00F9136E /* Request.swift */,
 				FE41CEE52246A79D00F9136E /* String+FrigKit.swift */,
@@ -308,6 +321,30 @@
 				FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FE41CEF02246A9EF00F9136E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FE41CEF22246AA0800F9136E /* Service */,
+				FE41CEF12246A9FC00F9136E /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FE41CEF12246A9FC00F9136E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE41CEF32246AA8C00F9136E /* Ingredients.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE41CEF22246AA0800F9136E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,11 +455,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE41CEF42246AA8C00F9136E /* Ingredients.swift in Sources */,
 				FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */,
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
+				FE41CEEF2246A96A00F9136E /* Config.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
 				E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */,
+				FE41CEF62246ABC100F9136E /* Extensions.swift in Sources */,
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
 				E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */,
 				094425952235800100F15D5E /* IngredientNode.m in Sources */,
@@ -579,7 +619,7 @@
 		};
 		E1540555220E5B9B00188638 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F261BA5C869B21CEE859688B /* Pods-MixParadise.debug.xcconfig */;
+			baseConfigurationReference = A1DD7FE909375EDCE8705174 /* Pods-MixParadise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -601,7 +641,7 @@
 		};
 		E1540556220E5B9B00188638 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */;
+			baseConfigurationReference = 3D7BD185EF0E7E45833CCE9D /* Pods-MixParadise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
