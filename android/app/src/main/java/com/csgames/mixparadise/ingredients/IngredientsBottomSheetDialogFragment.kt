@@ -25,9 +25,9 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     private var ingredientSelectedListener: IngredientSelectedListener? = null
     private val ingredientsList = listOf(
-        IngredientToPicked("chat1", "desc chat1"),
-        IngredientToPicked("chat2", "desc chat2"),
-        IngredientToPicked("chat3", "desc chat3"))
+        IngredientToPicked("chat1", 1),
+        IngredientToPicked("chat2", 2),
+        IngredientToPicked("chat3", 3))
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_ingredients_dialog, container, false).also {
@@ -38,10 +38,6 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     @Suppress("UNCHECKED_CAST")
     private fun setupDialogView(dialogView: View) {
         // this is called when opening the add ingredients windows
-        // addIngredientsDialogView
-        // view_ingredients_dialog
-        // var ingredientView = addIngredientsDialogView
-        // addIngredientsDialogView.ingredients.
 
         dialogView.close.setOnClickListener {
             dismiss()
@@ -51,12 +47,8 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // RecyclerView node initialized here
         ingredients.apply {
-            // set a LinearLayoutManager to handle Android
-            // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
             adapter = IngredientAdapter(ingredientsList)
         }
     }
