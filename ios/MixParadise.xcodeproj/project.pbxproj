@@ -15,6 +15,8 @@
 		094425962235800100F15D5E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0944258E2235800100F15D5E /* GameScene.sks */; };
 		094425972235800100F15D5E /* Droplet.png in Resources */ = {isa = PBXBuildFile; fileRef = 0944258F2235800100F15D5E /* Droplet.png */; };
 		09442599223581D100F15D5E /* LiquidScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09442598223581D100F15D5E /* LiquidScene.swift */; };
+		D882ED9A2246B2F200C57F82 /* String+Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882ED992246B2F200C57F82 /* String+Hashing.swift */; };
+		D882ED9D2246B76400C57F82 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882ED9C2246B76400C57F82 /* APIData.swift */; };
 		E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1540545220E5B9A00188638 /* AppDelegate.swift */; };
 		E154054D220E5B9B00188638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E154054C220E5B9B00188638 /* Assets.xcassets */; };
 		E1540550220E5B9B00188638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E154054E220E5B9B00188638 /* LaunchScreen.storyboard */; };
@@ -58,6 +60,8 @@
 		09442598223581D100F15D5E /* LiquidScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidScene.swift; sourceTree = "<group>"; };
 		735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.release.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.release.xcconfig"; sourceTree = "<group>"; };
 		C5AA96444AE6C9D01C7AF0FE /* libPods-MixParadise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MixParadise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D882ED992246B2F200C57F82 /* String+Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hashing.swift"; sourceTree = "<group>"; };
+		D882ED9C2246B76400C57F82 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		E1540542220E5B9A00188638 /* MixParadise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixParadise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1540545220E5B9A00188638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E154054C220E5B9B00188638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +124,14 @@
 			path = SpriteKit;
 			sourceTree = "<group>";
 		};
+		D882ED9B2246B74D00C57F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D882ED9C2246B76400C57F82 /* APIData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E1540539220E5B9A00188638 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +153,7 @@
 		E1540544220E5B9A00188638 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D882ED9B2246B74D00C57F82 /* Model */,
 				E1540545220E5B9A00188638 /* AppDelegate.swift */,
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
@@ -243,6 +256,7 @@
 				E1E8CBDB2233477F0071D5C3 /* GenericButton.swift */,
 				E1E8CBF3223358080071D5C3 /* ComponentFactory.swift */,
 				E158FC29224317C2000EA79B /* PopUpTransition.swift */,
+				D882ED992246B2F200C57F82 /* String+Hashing.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -398,8 +412,10 @@
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
+				D882ED9A2246B2F200C57F82 /* String+Hashing.swift in Sources */,
 				E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */,
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
+				D882ED9D2246B76400C57F82 /* APIData.swift in Sources */,
 				E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */,
 				094425952235800100F15D5E /* IngredientNode.m in Sources */,
 				E1E8CBC7223336AA0071D5C3 /* ViewControllerFactory.swift in Sources */,
@@ -556,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q596JWQC5;
+				DEVELOPMENT_TEAM = C93A6Z9KNL;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,7 +594,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q596JWQC5;
+				DEVELOPMENT_TEAM = C93A6Z9KNL;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
