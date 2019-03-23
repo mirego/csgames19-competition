@@ -14,5 +14,5 @@ interface DrinkService {
     fun getIngredients(@Query("key") key:String = Api.KEY): Call<IngredientsResponse>
 
     @POST("serve")
-    fun serveRecipe(@Body List<ServeItem>) :Call<ServeResponse>
+    fun serveRecipe(@Body serverItems: List<ServeItem>) :Call<ServeResponse>
 }
