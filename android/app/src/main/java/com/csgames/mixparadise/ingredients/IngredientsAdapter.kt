@@ -10,7 +10,10 @@ import com.csgames.mixparadise.model.Ingredient
 import com.csgames.mixparadise.model.IngredientsResponse
 
 // Since the adapter is never changing, there's no need to use ListAdapter
-class IngredientsAdapter(response: IngredientsResponse) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class IngredientsAdapter(
+    response: IngredientsResponse,
+    private val onIngredientSelected: IngredientSelectedListener
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val ingredientList: List<Ingredient>
     private var headerPositions = List(4) { 0 }
 
@@ -52,6 +55,7 @@ class IngredientsAdapter(response: IngredientsResponse) : RecyclerView.Adapter<R
                     .with(imageView)
                     .load(ingredient.imageUrl)
                     .into(imageView)
+                itemView.setOnClickListener { onIngredientSelected(ingredient) }
             }
         }
     }
