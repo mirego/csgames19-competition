@@ -35,6 +35,22 @@ class IngredientsPickerViewController: BaseViewController {
     func updateView(data: NSDictionary) {
         mainView.isLoading = false
         print(data)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.textAlignment = .center
+        label.text = "very sad"
+        //collectionView.addSubview(label)
+//        let collectionView = UICollectionView()
+//        for stuff in data {
+//            for alcohol in stuff {
+//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//                label.textAlignment = .center
+//                label.text = alcohol.label
+//                collectionView.addSubview(label)
+//            }
+//
+//        }
+        mainView.addSubview(label)
     }
 }
 
