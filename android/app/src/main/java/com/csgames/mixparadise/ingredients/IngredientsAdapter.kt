@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class IngredientsAdapter(private val ingredients: ArrayList<BasicIngredient>) : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+typealias ItemClickListener = (basicIngredient: BasicIngredient) -> Unit
+
+class IngredientsAdapter(private val ingredients: ArrayList<BasicIngredient>, private val listener: ItemClickListener) : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
 
     inner class ViewHolder(var ingredientView: View, var context: Context) : RecyclerView.ViewHolder(ingredientView)
 
@@ -16,7 +18,11 @@ class IngredientsAdapter(private val ingredients: ArrayList<BasicIngredient>) : 
         singleSongView.layoutParams =
             ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         // set the view's size, margins, paddings and layout parameters
-        return ViewHolder(singleSongView, parent.context)
+        val viewHolder = ViewHolder(singleSongView, parent.context)
+        singleSongView.setOnClickListener {
+            listener(ingredients[viewHolder.adapterPosition])
+        }
+        return viewHolder
     }
 
     // Replace the contents of a view (invoked by the layout manager)

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.api.Api
@@ -18,7 +19,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 typealias IngredientSelectedListener = (
-    id: String
+    ingredient: BasicIngredient
 ) -> Unit
 
 class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
@@ -46,19 +47,22 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         super.onActivityCreated(savedInstanceState)
         Api.drinkService.listIngredients(Api.createHeader()).enqueue(object : Callback<Ingredients> {
             override fun onFailure(call: Call<Ingredients>, t: Throwable) {
-                Log.e("FAILLLLLLLL", t.message)
+                Log.e("Request Failed", t.message)
             }
 
             override fun onResponse(call: Call<Ingredients>, response: Response<Ingredients>) {
-                var list1 : ArrayList<BasicIngredient> = response.body()!!.ingredients.toCollection(ArrayList())
-                var list2 : ArrayList<BasicIngredient> = response.body()!!.juices.toCollection(ArrayList())
-                var list3 : ArrayList<BasicIngredient> = response.body()!!.alcohol.toCollection(ArrayList())
+                val list1: ArrayList<BasicIngredient> = response.body()!!.ingredients.toCollection(ArrayList())
+                val list2: ArrayList<BasicIngredient> = response.body()!!.juices.toCollection(ArrayList())
+                val list3: ArrayList<BasicIngredient> = response.body()!!.drinks.toCollection(ArrayList())
+                val list4: ArrayList<BasicIngredient> = response.body()!!.alcohol.toCollection(ArrayList())
                 list1.addAll(list2)
                 list1.addAll(list3)
-                ingredients.adapter = IngredientsAdapter(list1)
+                list1.addAll(list4)
+                ingredients.adapter = IngredientsAdapter(list1){ ingredient ->
+                    ingredientSelectedListener?.let { it(ingredient) }
+                }
                 // Set layout manager to position the items
                 ingredients.layoutManager = LinearLayoutManager(context)
-                Log.e("HELLLOOOOOO", response.body()!!.ingredients[0].id)
             }
         })
     }
