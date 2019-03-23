@@ -11,7 +11,12 @@ import com.bumptech.glide.Glide
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.model.Ingredient
 
-class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.IngredientsViewHolder>() {
+
+class IngredientsAdapter(var listener: OnIngredientClickedListener) : RecyclerView.Adapter<IngredientsAdapter.IngredientsViewHolder>() {
+
+    interface OnIngredientClickedListener {
+        fun onIngredientClicked(ingredient: Ingredient)
+    }
 
     var ingredients: List<Ingredient> = arrayListOf()
     set(value) {
@@ -41,6 +46,9 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.IngredientsVi
         fun bind(ingredient: Ingredient) {
             Glide.with(view).load(Uri.parse(ingredient.imageUrl)).into(imageView)
             titleTextView.text = ingredient.label
+            view.setOnClickListener {
+                listener.onIngredientClicked(ingredient)
+            }
         }
     }
 
