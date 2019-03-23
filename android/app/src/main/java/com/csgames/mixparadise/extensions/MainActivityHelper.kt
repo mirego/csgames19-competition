@@ -1,14 +1,23 @@
 package com.csgames.mixparadise.extensions
 
 import android.os.Bundle
+import android.util.Log.d
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnLayout
 import com.csgames.mixparadise.Blender
 import com.csgames.mixparadise.MainActivity
+import com.csgames.mixparadise.MixParadiseApplication
+import com.csgames.mixparadise.api.Api
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.model.ServeItem
+import com.csgames.mixparadise.model.ServeResponse
 import kotlinx.android.synthetic.main.view_blender_with_table.*
+import kotlinx.android.synthetic.main.view_ingredient_item.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 private const val ADD_INGREDIENTS_FRAGMENT_TAG = "ADD_INGREDIENTS_FRAGMENT_TAG"
 
@@ -41,11 +50,6 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
         true
     }
 
-    serveButton.setOnClickListener {
-        blender.empty()
-        addIngredientsButton.visibility = View.VISIBLE
-        serveButton.visibility = View.GONE
-    }
 
     addIngredientsButton.setOnClickListener {
         if (ingredientsDialog.isAdded) {

@@ -203,20 +203,42 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/close"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/background_button_dark"
-        android:fontFamily="@font/montserrat_bold"
-        android:foreground="?selectableItemBackground"
-        android:text="@string/new_drink_button"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#3b5998"
+            android:fontFamily="@font/montserrat_bold"
+            android:foreground="?selectableItemBackground"
+            android:textColor="@android:color/white"
+            android:text="Share"/>
+
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button_dark"
+            android:fontFamily="@font/montserrat_bold"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/new_drink_button"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
 
     <nl.dionsegijn.konfetti.KonfettiView
         android:id="@+id/konfettiView"
