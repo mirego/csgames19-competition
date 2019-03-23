@@ -55,6 +55,8 @@
 		FE41CEEF2246A96A00F9136E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEEE2246A96A00F9136E /* Config.swift */; };
 		FE41CEF42246AA8C00F9136E /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEF32246AA8C00F9136E /* Ingredients.swift */; };
 		FE41CEF62246ABC100F9136E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEF52246ABC100F9136E /* Extensions.swift */; };
+		FEB158A42246B7110074FF33 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB158A32246B7110074FF33 /* TitleLabel.swift */; };
+		FEB158A62246BDAD0074FF33 /* BlenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB158A52246BDAD0074FF33 /* BlenderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		FE41CEEE2246A96A00F9136E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FE41CEF32246AA8C00F9136E /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		FE41CEF52246ABC100F9136E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FEB158A32246B7110074FF33 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		FEB158A52246BDAD0074FF33 /* BlenderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 		E1E8CBBA223335910071D5C3 /* IngredientsPicker */ = {
 			isa = PBXGroup;
 			children = (
+				FEB158A22246B6FA0074FF33 /* Subviews */,
 				E1E8CBBD223335C40071D5C3 /* IngredientsPickerViewController.swift */,
 				E1E8CBC3223335F90071D5C3 /* IngredientsPickerView.swift */,
 			);
@@ -358,8 +363,17 @@
 			isa = PBXGroup;
 			children = (
 				FE13B0112246AED0008C8AE6 /* IngredientService.swift */,
+				FEB158A52246BDAD0074FF33 /* BlenderService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FEB158A22246B6FA0074FF33 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FEB158A32246B7110074FF33 /* TitleLabel.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB158A62246BDAD0074FF33 /* BlenderService.swift in Sources */,
 				FE41CEF42246AA8C00F9136E /* Ingredients.swift in Sources */,
 				FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */,
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
@@ -488,6 +503,7 @@
 				E158FC3722443F73000EA79B /* ProgressView.swift in Sources */,
 				FE13B01A2246B039008C8AE6 /* Liquid.swift in Sources */,
 				E1E8CBC2223335EC0071D5C3 /* RootView.swift in Sources */,
+				FEB158A42246B7110074FF33 /* TitleLabel.swift in Sources */,
 				E158FC2A224317C2000EA79B /* PopUpTransition.swift in Sources */,
 				094425922235800100F15D5E /* GameScene.m in Sources */,
 				E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */,
