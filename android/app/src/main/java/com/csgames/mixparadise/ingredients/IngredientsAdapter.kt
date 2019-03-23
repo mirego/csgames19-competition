@@ -1,22 +1,31 @@
 package com.csgames.mixparadise.ingredients
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.model.Ingredient
 import com.csgames.mixparadise.model.IngredientsResponse
 
 // Since the adapter is never changing, there's no need to use ListAdapter
-class IngredientsAdapter(private val response: IngredientsResponse) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val headerPositions = List(4) {
-        when (it) {
-            0 -> 0
-            1 -> response.juices.size
-            2 -> response.juices.size + response.drinks.size
-            3 -> response.juices.size + response.drinks.size + response.ingredients.size
+class IngredientsAdapter(response: IngredientsResponse) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val ingredientList: List<Ingredient>
+    private var headerPositions = List(4) { 0 }
+
+    init {
+        val lists = listOf(response.juices, response.drinks, response.alcohols, response.ingredients)
+        headerPositions = headerPositions.foldIndexed(mutableListOf()) { i, list, _ ->
+            if (i == 0) list.add(0)
+            else {
+                list.add(list.last() + lists.last().size)
+            }
+            list
         }
+        ingredientList = lists.flatten()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(viewType, parent, false)
         return when (viewType) {
@@ -25,20 +34,19 @@ class IngredientsAdapter(private val response: IngredientsResponse) : RecyclerVi
         }
     }
 
-    override fun onBindViewHolder(holderParent: RecyclerView.ViewHolder, position: Int) {
-        // TODO: FIX
-        val ingredient = response.juices[position]
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        Log.d(this::class.java.simpleName, "position: $position")
 
-        if (holderParent is IngredientHeaderVH) {
-            val holder = holderParent as IngredientHeaderVH
+        if (holder is IngredientHeaderVH) {
             holder.title.text = when (position) {
                 headerPositions[0] -> "Juices"
                 headerPositions[1] -> "Drinks"
                 headerPositions[2] -> "Ingredients"
                 else -> "Alcohol"
             }
-        } else if (holderParent is IngredientsViewHolder) {
-            with(holderParent) {
+        } else if (holder is IngredientsViewHolder) {
+            val ingredient = ingredientList[position - headerPositions.filter { it < position }.size]
+            with(holder) {
                 title.text = ingredient.label
                 Glide
                     .with(imageView)
@@ -48,7 +56,7 @@ class IngredientsAdapter(private val response: IngredientsResponse) : RecyclerVi
         }
     }
 
-    override fun getItemCount() = response.alcohols.size + response.drinks.size + response.ingredients.size + response.juices.size + 4
+    override fun getItemCount() = ingredientList.size + 4
 
     override fun getItemViewType(position: Int): Int {
         return if (headerPositions.any { it == position }) {

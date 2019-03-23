@@ -1,5 +1,6 @@
 package com.csgames.mixparadise.ingredients
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.csgames.mixparadise.BaseViewModel
@@ -29,8 +30,10 @@ class IngredientsViewModel : BaseViewModel() {
                 .subscribeOn(Schedulers.io())
                 .subscribe { ingredients, err ->
                     _isLoading.postValue(false)
-                    if (err != null) _hasError.postValue(true)
-                    else {
+                    if (err != null) {
+                        Log.e(this::class.java.simpleName, "Error", err)
+                        _hasError.postValue(true)
+                    } else {
                         _hasError.postValue(false)
                         _ingredients.postValue(ingredients)
                     }

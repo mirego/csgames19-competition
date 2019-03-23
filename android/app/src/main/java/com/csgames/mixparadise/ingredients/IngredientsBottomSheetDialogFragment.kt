@@ -1,11 +1,13 @@
 package com.csgames.mixparadise.ingredients
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.ViewModelProviders.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.extensions.setImmersiveMode
@@ -30,8 +32,8 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        /*viewModel = ViewModelProviders.of(this)[IngredientsViewModel::class.java]
-        viewModel.fetchIngredients()*/
+        viewModel = ViewModelProviders.of(this)[IngredientsViewModel::class.java]
+        viewModel.fetchIngredients()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -42,10 +44,11 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     @Suppress("UNCHECKED_CAST")
     private fun setupDialogView(dialogView: View) {
-       /* viewModel.ingredients.observe(this, Observer {
+        Log.d(this::class.java.simpleName, "set up dialog")
+        viewModel.ingredients.observe(this, Observer {
             dialogView.ingredients.adapter = IngredientsAdapter(it)
-        })*/
-        dialogView.ingredients.adapter = IngredientsAdapter(IngredientsResponse(listOf(Liquid("", "Juice", "#f5a22c", 0.4f, "https://s3.amazonaws.com/shared.ws.mirego.com/csgames19/assets/orange@3x.png")), emptyList(), emptyList(), emptyList()))
+            dialogView.ingredients.layoutManager = LinearLayoutManager(requireContext())
+        })
         dialogView.close.setOnClickListener {
             dismiss()
         }
