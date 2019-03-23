@@ -6,26 +6,29 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.csgames.mixparadise.MixParadiseApplication
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.adapter.IngredientAdapter
 import com.csgames.mixparadise.adapter.JuiceAdapter
 import com.csgames.mixparadise.extensions.setImmersiveMode
+import com.csgames.mixparadise.model.Ingredient
 import com.csgames.mixparadise.model.Juice
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 
-typealias IngredientSelectedListener = (
-    id: String
-) -> Unit
+interface IngredientCallback {
+    fun onJuiceSelected(juice: Juice);
+}
 
 class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
+    lateinit var callback: IngredientCallback
 
     companion object {
         const val INGREDIENTS_ID_TO_OUNCES_MAP_KEY = "INGREDIENTS_ID_TO_OUNCES_MAP_KEY"
     }
-
-    private var ingredientSelectedListener: IngredientSelectedListener? = null
     lateinit var juiceAdapter: JuiceAdapter
     lateinit var drinkAdapter: JuiceAdapter
+    lateinit var alcoholAdapter: JuiceAdapter
+    lateinit var ingredientAdapter: IngredientAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_ingredients_dialog, container, false).also {
             setupDialogView(it)
@@ -35,10 +38,9 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             juiceAdapter = JuiceAdapter(MixParadiseApplication.ingredients.juices, this!!.context!!, object:
                 JuiceAdapter.OnItemClickListener {
                 override fun onItemClickListener(item: Juice) {
-
+                    callback.onJuiceSelected(item)
                 }
             })
-
             it.juices.adapter = juiceAdapter
 
 
@@ -50,8 +52,27 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
                 }
             })
-
             it.drinks.adapter = drinkAdapter
+
+            it.alcohols.setLayoutManager(GridLayoutManager(activity, 4))
+            it.alcohols.setNestedScrollingEnabled(false);
+            alcoholAdapter = JuiceAdapter(MixParadiseApplication.ingredients.alcohols, this!!.context!!, object:
+                JuiceAdapter.OnItemClickListener {
+                override fun onItemClickListener(item: Juice) {
+
+                }
+            })
+            it.alcohols.adapter = alcoholAdapter
+
+            it.ingredients.setLayoutManager(GridLayoutManager(activity, 4))
+            it.ingredients.setNestedScrollingEnabled(false);
+            ingredientAdapter = IngredientAdapter(MixParadiseApplication.ingredients.ingredients, this!!.context!!, object:
+                IngredientAdapter.OnItemClickListener {
+                override fun onItemClickListener(item: Ingredient) {
+
+                }
+            })
+            it.ingredients.adapter = ingredientAdapter
         }
     }
 
@@ -63,8 +84,8 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     }
 
-    fun setIngredientSelectedListener(ingredientSelectedListener: IngredientSelectedListener) {
-        this.ingredientSelectedListener = ingredientSelectedListener
+    fun setIngredientSelectedListener(ingredientSelectedListener: IngredientCallback) {
+        this.callback = ingredientSelectedListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?) = super.onCreateDialog(savedInstanceState).also {

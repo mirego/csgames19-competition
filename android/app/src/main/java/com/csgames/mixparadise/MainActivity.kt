@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import com.csgames.mixparadise.api.Api
 import com.csgames.mixparadise.api.DrinkService
 import com.csgames.mixparadise.extensions.*
+import com.csgames.mixparadise.ingredients.IngredientCallback
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import com.csgames.mixparadise.model.IngredientsResponse
+import com.csgames.mixparadise.model.Juice
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
 import retrofit2.Call
@@ -17,7 +19,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IngredientCallback {
 
     companion object {
         private const val RESULT_FRAGMENT_TAG = "RESULT_FRAGMENT_TAG"
@@ -68,15 +70,14 @@ class MainActivity : AppCompatActivity() {
     override fun onAttachFragment(fragment: Fragment?) {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
-            fragment.setIngredientSelectedListener { id ->
-
-            }
+            fragment.setIngredientSelectedListener(this@MainActivity)
         }
     }
 
     // TODO: pass the juice
-    private fun onJuiceSelected() {
-        blender.addLiquid("orange", "#A66C1E", 0.5f)
+    override fun onJuiceSelected(juice: Juice) {
+        d("juice", juice.toString())
+        blender.addLiquid(juice.id, "#A66C1E", 0.5f)
     }
 
     // TODO: pass the drink

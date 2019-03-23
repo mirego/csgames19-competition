@@ -105,6 +105,50 @@
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:paddingBottom="@dimen/default_margin" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/dark_grey_blue"
+                android:textSize="28sp"
+                android:text="Alcohols" />
+            <include layout="@layout/view_section_separator_item"></include>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/alcohols"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="@dimen/default_margin" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/dark_grey_blue"
+                android:textSize="28sp"
+                android:text="Ingredients" />
+            <include layout="@layout/view_section_separator_item"></include>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="@dimen/default_margin" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
