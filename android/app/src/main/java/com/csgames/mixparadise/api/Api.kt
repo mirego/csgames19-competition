@@ -29,6 +29,7 @@ object Api {
                 // Request customization: add request headers
                 val requestBuilder = original.newBuilder()
                     .header("Authorization", key) // <-- this is the important line
+                    .header("Team", "SherGill")
 
                 val request = requestBuilder.build()
                 chain.proceed(request)
