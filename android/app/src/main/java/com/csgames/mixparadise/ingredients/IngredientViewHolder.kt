@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.csgames.mixparadise.model.StackedIngredient
 import com.bumptech.glide.Glide
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.model.Ingredient
 
 
 class IngredientViewHolder(inflater: LayoutInflater, parent: ViewGroup, private val context: Context?) :
@@ -23,7 +23,7 @@ class IngredientViewHolder(inflater: LayoutInflater, parent: ViewGroup, private 
         imageView = itemView.findViewById(R.id.image_view)
     }
 
-    fun bind(ingredient: StackedIngredient) {
+    fun bind(ingredient: Ingredient) {
         countView?.text = "2"
         titleView?.text = ingredient.label
         Glide.with(context!!).load(ingredient.imageUrl).into(imageView!!)

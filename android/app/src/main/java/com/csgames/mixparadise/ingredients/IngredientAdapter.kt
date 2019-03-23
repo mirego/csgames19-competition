@@ -4,9 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.csgames.mixparadise.model.StackedIngredient
+import com.csgames.mixparadise.model.Ingredient
 
-class IngredientAdapter(private val context: Context?, private val myDataset: Array<StackedIngredient>) :
+class IngredientAdapter(private val context: Context?, private val myDataset: List<Ingredient>) :
     RecyclerView.Adapter<IngredientViewHolder>() {
 
     private val inflater: LayoutInflater
@@ -17,7 +17,7 @@ class IngredientAdapter(private val context: Context?, private val myDataset: Ar
     }
 
     override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
-        val ingredient: StackedIngredient = myDataset[position]
+        val ingredient: Ingredient = myDataset[position]
         holder.bind(ingredient)
     }
 

@@ -12,8 +12,8 @@
 
     <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:background="@android:color/white"
             android:foreground="?selectableItemBackgroundBorderless"
             app:cardCornerRadius="35dp"
@@ -24,8 +24,8 @@
 
         <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:layout_margin="13dp"
                 android:scaleType="fitCenter"
@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_view"
-            tools:text="Grapefruit"/>
+            tools:text="Grapefruit" android:textAlignment="viewStart"/>
 
     <androidx.cardview.widget.CardView
             android:id="@+id/count_container"
@@ -65,8 +65,8 @@
 
         <TextView
                 android:id="@+id/count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginBottom="1dp"
                 android:fontFamily="@font/montserrat_bold"

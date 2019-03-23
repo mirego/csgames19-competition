@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
     private var ingredients: IngredientResponse? = null
     private lateinit var blender: Blender
 
+    private val listFragment = IngredientsBottomSheetDialogFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<IngredientResponse>?, response: Response<IngredientResponse>) {
                     Log.v("Response success", response.body().toString())
                     ingredients = response.body()
+                    listFragment.setIngredients(response.body()!!)
                 }
 
                 override fun onFailure(call: Call<IngredientResponse>?, t: Throwable?) {
@@ -99,6 +102,7 @@ class MainActivity : AppCompatActivity() {
     override fun onAttachFragment(fragment: Fragment?) {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
+            allData = ingredients
             fragment.setIngredientSelectedListener { id ->
 
             }
@@ -146,5 +150,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         return result.toString()
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.detach(fragment)
+        transaction.attach(fragment)
+        transaction.commitAllowingStateLoss()
     }
 }
