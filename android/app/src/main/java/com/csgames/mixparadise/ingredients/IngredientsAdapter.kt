@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.model.Ingredient
 
@@ -38,7 +39,7 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.IngredientsVi
         var countTextView: TextView = view.findViewById(R.id.count)
 
         fun bind(ingredient: Ingredient) {
-            imageView.setImageURI(Uri.parse(ingredient.imageUrl))
+            Glide.with(view).load(Uri.parse(ingredient.imageUrl)).into(imageView)
             titleTextView.text = ingredient.label
         }
     }
