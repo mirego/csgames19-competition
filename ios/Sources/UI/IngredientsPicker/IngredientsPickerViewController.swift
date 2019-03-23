@@ -24,7 +24,8 @@ class IngredientsPickerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainView.isLoading = true
+        mainView.isLoading = false
+    
     }
 }
 

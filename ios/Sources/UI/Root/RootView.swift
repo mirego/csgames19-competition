@@ -129,6 +129,39 @@ class RootView: UIView {
 
     func addIngredient(/* TODO Add a incredient!*/) {
         pushButton.isEnabled = true
+        
+        // Here
+        let url = URL(string: "https://mirego-csgames19.herokuapp.com/ingredients")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Carleton", forHTTPHeaderField: "Team")
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let data = data else{
+                //Same as above
+                return
+            }
+            
+            do {
+                let collectionData = try JSONDecoder().decode(GenCollection.self, from: data)
+                let juiceCount = collectionData.juices.count
+                for iter in 0...juiceCount-1{
+                    print(collectionData.juices[iter])
+                }
+                let drinkCount = collectionData.drinks.count
+                for iter in 0...drinkCount-1{
+                    print(collectionData.drinks[iter])
+                }
+            } catch let err {
+                print(err.localizedDescription)
+            }
+            
+        }
+        
+        task.resume()
 
         // Use scene?.addColor(color: color) to add a liquid color layer
         // Use scene?.addSolid(image: image) to add a solid (ice, sugar, basil, etc...)
