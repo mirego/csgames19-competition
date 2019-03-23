@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.csgames.mixparadise.BaseViewModel
 import com.csgames.mixparadise.api.Api
+import com.csgames.mixparadise.model.Ingredient
 import com.csgames.mixparadise.model.IngredientsResponse
 import io.reactivex.schedulers.Schedulers
 
@@ -19,9 +20,12 @@ class IngredientsViewModel : BaseViewModel() {
     val ingredients: LiveData<IngredientsResponse>
         get() = _ingredients
 
+    private val blenderIngredients = MutableLiveData<List<Ingredient>>()
+
     init {
         _isLoading.value = false
         _hasError.value = false
+        blenderIngredients.value = listOf()
     }
 
     fun fetchIngredients() {
@@ -41,7 +45,15 @@ class IngredientsViewModel : BaseViewModel() {
         )
     }
 
+    fun addIngredient(ingredient: Ingredient) {
+        blenderIngredients.value = blenderIngredients.value!! + ingredient
+    }
+
     fun serveBeverage() {
-//        subscriptions.add(Api.drinkService.serveBeverage())
+        subscriptions.add(Api.drinkService.serveBeverage()
+            .subscribeOn(Schedulers.io())
+            .subscribe {
+
+            })
     }
 }
