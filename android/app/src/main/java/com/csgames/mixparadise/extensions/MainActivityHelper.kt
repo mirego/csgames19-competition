@@ -1,16 +1,22 @@
 package com.csgames.mixparadise.extensions
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnLayout
+import androidx.lifecycle.MutableLiveData
 import com.csgames.mixparadise.Blender
 import com.csgames.mixparadise.MainActivity
 import com.csgames.mixparadise.api.Api.drinkService
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import com.csgames.mixparadise.model.IngredientList
 import kotlinx.android.synthetic.main.view_blender_with_table.*
+import org.jetbrains.anko.doAsync
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 private const val ADD_INGREDIENTS_FRAGMENT_TAG = "ADD_INGREDIENTS_FRAGMENT_TAG"
 
@@ -56,14 +62,34 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
 
 
         // You know nothing Jon Snow! ¯\_(ツ)_/¯
-        val result = drinkService.getIngredients().execute().body()
-        val juices = result?.juices
 
-        if (juices != null) {
-            for (j in juices) {
-                System.out.println(j)
-            }
+
+
+        val data = MutableLiveData<IngredientList>()
+
+        doAsync {
+            drinkService.getIngredients().enqueue(object : Callback<IngredientList> {
+                override fun onFailure(call: Call<IngredientList>, t: Throwable) {
+                    Log.v("retrofit", "call failed")
+                }
+
+                override fun onResponse(call: Call<IngredientList>?, response: Response<IngredientList>?) {
+                    data.value = response?.body()
+
+                    val juices = data.value?.juices
+
+                    if (juices != null) {
+                        for (j in juices) {
+                            System.out.println(j)
+                        }
+                    }
+
+                }
+            })
         }
+
+        // When you play the game of thrones, you win or you die. — Cersei
+        // When you play the Cs Games, you win or die. - MP
 
         ingredientsDialog.arguments = Bundle().apply {
             putSerializable(
@@ -83,4 +109,8 @@ private fun setupView(view: View, parent: View) {
     (view.layoutParams as ViewGroup.MarginLayoutParams).topMargin = (parent.measuredHeight * 0.13).toInt()
     view.layoutParams.height = (parent.measuredHeight * 0.51).toInt()
     view.requestLayout()
+}
+
+private fun getIngredientList() {
+
 }
