@@ -15,6 +15,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+private val charPool : List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+
+public val randomKeyString = (1..32)
+    .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
+    .map(charPool::get)
+    .joinToString("");
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,7 +57,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<Model.Result>?, response: Response<Model.Result>?) {
-                // Use response?.body()?
+                // Initialize a new instance of
+                val builder = AlertDialog.Builder(this@MainActivity)
+
+                // Set the alert dialog title
+                builder.setTitle("Waza")
+
+                // Display a message on alert dialog
+                builder.setMessage(response?.body()?.alcohols?.size.toString())
+
+                // Finally, make the alert dialog using builder
+                val dialog: AlertDialog = builder.create()
+
+                // Display the alert dialog on app interface
+                dialog.show()
             }
         })
     }
