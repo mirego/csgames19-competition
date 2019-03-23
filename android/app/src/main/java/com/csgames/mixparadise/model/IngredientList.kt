@@ -1,5 +1,7 @@
 package com.csgames.mixparadise.model
 
+import java.util.*
+
 class IngredientList(
     val drinks: List<Drink>,
     val juices: List<Juice>,
@@ -28,6 +30,9 @@ class IngredientList(
         val label: String,
         val type: String,
         val weight: Double,
-        val imageUrl: String
+        val imageUrl: String,
+        val sprites: Array<String>
     )
+
+    data class alcohols (val alcohol: String)
 }
