@@ -45,7 +45,6 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             }
 
             override fun onFailure(call: Call<GetIngredientsResponse>, t: Throwable) {
-                Log.d("ICI", "ALLO")
             }
         })
     }

@@ -32,13 +32,8 @@ class IngredientCategoriesAdapter : RecyclerView.Adapter<IngredientCategoriesAda
 
     inner class IngredientCategoriesViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
-        lateinit var categoryTitleTextView: TextView
-        lateinit var ingredientsRecyclerView: RecyclerView
-
-        init {
-            categoryTitleTextView = view.findViewById(R.id.ingredientCategoryTitle)
-            ingredientsRecyclerView = view.findViewById(R.id.ingredientsRecyclerView)
-        }
+        var categoryTitleTextView: TextView = view.findViewById(R.id.ingredientCategoryTitle)
+        var ingredientsRecyclerView: RecyclerView = view.findViewById(R.id.ingredientsRecyclerView)
 
         fun bind(ingredientCategory: IngredientCategory) {
             categoryTitleTextView.text = ingredientCategory.category.title
