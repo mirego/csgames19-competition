@@ -15,5 +15,6 @@ data class Juice(
     var color: String = "",
     var type: String = "",
     var opacity: Double = 0.0,
-    var imageUrl: String = ""
+    var imageUrl: String = "",
+    var count: Int = 0
 )

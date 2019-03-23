@@ -35,7 +35,16 @@ class JuiceAdapter(var items:List<Juice>, val context: Context, val listener: On
         holder.bind(item);
 
         holder.itemView.setOnClickListener { _ ->
+            item.count += 1
             listener.onItemClickListener(item)
+            notifyItemChanged(position)
+        }
+
+        if(item.count > 0) {
+            holder.itemView.count_container.visibility = View.VISIBLE
+            holder.itemView.count.setText(item.count.toString())
+        } else {
+            holder.itemView.count_container.visibility = View.GONE
         }
     }
 
