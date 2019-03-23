@@ -7,5 +7,6 @@ class MixParadiseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Api.init(applicationContext)
+        Api.setAuthRequest(applicationContext)
     }
 }
