@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class IngredientsAdapter(private val ingredients: ArrayList<Ingredient>) : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+class IngredientsAdapter(private val ingredients: ArrayList<BasicIngredient>) : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
 
     inner class ViewHolder(var ingredientView: View, var context: Context) : RecyclerView.ViewHolder(ingredientView)
 
