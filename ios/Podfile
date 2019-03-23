@@ -12,4 +12,6 @@ target 'MixParadise' do
     pod 'Kingfisher'
     pod 'Cheers'
     pod 'SwiftHEXColors'
+    pod 'Alamofire'
+    pod 'AlamofireImage'
 end
