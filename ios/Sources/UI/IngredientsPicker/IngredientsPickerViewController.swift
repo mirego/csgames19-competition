@@ -25,6 +25,12 @@ class IngredientsPickerViewController: BaseViewController {
         super.viewDidLoad()
 
         mainView.isLoading = true
+        
+        // Get the ingredients
+        getIngredients(true) { response in
+            self.mainView.isLoading = false
+            self.mainView.setIngredients(data: response)
+        }
     }
 }
 

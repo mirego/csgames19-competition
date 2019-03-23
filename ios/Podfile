@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@github.com:mirego/MCPodSpecs.git'
 
 platformVersion = '12.0'
 platform :ios, platformVersion
@@ -13,4 +12,6 @@ target 'MixParadise' do
     pod 'Kingfisher'
     pod 'Cheers'
     pod 'SwiftHEXColors'
+    pod 'Alamofire'
+    pod 'AlamofireImage'
 end

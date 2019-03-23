@@ -15,6 +15,7 @@
 		094425962235800100F15D5E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0944258E2235800100F15D5E /* GameScene.sks */; };
 		094425972235800100F15D5E /* Droplet.png in Resources */ = {isa = PBXBuildFile; fileRef = 0944258F2235800100F15D5E /* Droplet.png */; };
 		09442599223581D100F15D5E /* LiquidScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09442598223581D100F15D5E /* LiquidScene.swift */; };
+		6754E4D02246AEAE00D57905 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754E4CF2246AEAE00D57905 /* Api.swift */; };
 		E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1540545220E5B9A00188638 /* AppDelegate.swift */; };
 		E154054D220E5B9B00188638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E154054C220E5B9B00188638 /* Assets.xcassets */; };
 		E1540550220E5B9B00188638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E154054E220E5B9B00188638 /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		0944258E2235800100F15D5E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0944258F2235800100F15D5E /* Droplet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Droplet.png; sourceTree = "<group>"; };
 		09442598223581D100F15D5E /* LiquidScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidScene.swift; sourceTree = "<group>"; };
+		6754E4CF2246AEAE00D57905 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.release.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.release.xcconfig"; sourceTree = "<group>"; };
 		C5AA96444AE6C9D01C7AF0FE /* libPods-MixParadise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MixParadise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1540542220E5B9A00188638 /* MixParadise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixParadise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
 				E1540559220E5E8500188638 /* SupportingFiles */,
+				6754E4CF2246AEAE00D57905 /* Api.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */,
 				E1E8CBF4223358080071D5C3 /* ComponentFactory.swift in Sources */,
 				E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */,
+				6754E4D02246AEAE00D57905 /* Api.swift in Sources */,
 				E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */,
 				09442599223581D100F15D5E /* LiquidScene.swift in Sources */,
 				E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */,

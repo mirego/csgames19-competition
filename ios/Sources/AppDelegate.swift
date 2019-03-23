@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.backgroundColor = .white
         window!.rootViewController = viewControllerFactory.rootViewController()
         window!.makeKeyAndVisible()
-
+        
         return true
     }
 }
