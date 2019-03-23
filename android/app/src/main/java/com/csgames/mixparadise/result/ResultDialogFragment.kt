@@ -26,6 +26,7 @@ class ResultDialogFragment : DialogFragment() {
 
     @Suppress("UNCHECKED_CAST")
     private fun setupDialogView(dialogView: View) {
+        // ceci est call quand on ouvre le result window
         dialogView.close.setOnClickListener {
             dismiss()
         }

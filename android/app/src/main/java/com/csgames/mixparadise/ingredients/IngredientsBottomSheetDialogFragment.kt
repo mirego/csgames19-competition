@@ -2,10 +2,15 @@ package com.csgames.mixparadise.ingredients
 
 import android.os.Bundle
 import android.view.*
+import android.widget.ListAdapter
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.extensions.setImmersiveMode
+import com.csgames.mixparadise.model.IngredientToPicked
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 
 typealias IngredientSelectedListener = (
@@ -19,6 +24,10 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
     private var ingredientSelectedListener: IngredientSelectedListener? = null
+    private val ingredientsList = listOf(
+        IngredientToPicked("chat1", "desc chat1"),
+        IngredientToPicked("chat2", "desc chat2"),
+        IngredientToPicked("chat3", "desc chat3"))
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_ingredients_dialog, container, false).also {
@@ -28,10 +37,28 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     @Suppress("UNCHECKED_CAST")
     private fun setupDialogView(dialogView: View) {
+        // this is called when opening the add ingredients windows
+        // addIngredientsDialogView
+        // view_ingredients_dialog
+        // var ingredientView = addIngredientsDialogView
+        // addIngredientsDialogView.ingredients.
+
         dialogView.close.setOnClickListener {
             dismiss()
         }
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // RecyclerView node initialized here
+        ingredients.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = IngredientAdapter(ingredientsList)
+        }
     }
 
     fun setIngredientSelectedListener(ingredientSelectedListener: IngredientSelectedListener) {
