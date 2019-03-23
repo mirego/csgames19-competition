@@ -6,11 +6,7 @@
 //  Copyright © 2019 Mirego. All rights reserved.
 //
 
-class Solid: Decodable {
-    let id: String = ""
-    let label: String = ""
-    let type: String = ""
-    let imageUrl: String = ""
-    let weight: Double = 0
-    let sprites: [String] = []
+class Solid: Ingredient {
+    var weight: Double = 0.0
+    var sprites: [String] = []
 }

@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sources/UI/IngredientsPicker/IngredientsPickerView.swift"
-            timestampString = "575059504.361684"
+            filePath = "Sources/Domain/Service/IngredientService.swift"
+            timestampString = "575066063.860167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "layoutSubviews()"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "getList(callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

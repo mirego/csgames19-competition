@@ -6,6 +6,6 @@
 //  Copyright © 2019 Mirego. All rights reserved.
 //
 
-class BlenderService {
-
-}
+//class BlenderService {
+//    let shared: BlenderService
+//}

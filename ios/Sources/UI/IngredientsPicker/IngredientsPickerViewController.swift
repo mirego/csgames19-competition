@@ -37,6 +37,7 @@ class IngredientsPickerViewController: BaseViewController {
             }
 
             self.mainView.configure(ingredients: ingredients!)
+            self.mainView.isLoading = false
         }
     }
 }

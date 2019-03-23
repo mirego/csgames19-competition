@@ -10,11 +10,13 @@ extension Request {
     func auth() -> Request {
         self.addHeader(RequestHeader.init(name: "Team", value: "The Floor is LAVAL"))
 
-//        let key = String.randomString(length: 32)
-//        self.params(["key": key])
-//
-//        let token = "csgames19\(NSDate().timeIntervalSince1970 / 60)\(key)"
-//        self.addHeader(RequestHeader.init(name: "Authorization", value: token))
+        let key = String.randomString(length: 32)
+        self.params(["key": key])
+
+        let token = "csgames19-\(Int(NSDate().timeIntervalSince1970) / 60)-\(key)"
+
+        // missing sha1
+        self.addHeader(RequestHeader.init(name: "Authorization", value: token))
         return self
     }
 }

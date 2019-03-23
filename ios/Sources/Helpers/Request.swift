@@ -425,7 +425,7 @@ public class Request {
 
     private var validation: RequestValidation?
 
-    fileprivate var urlRequest: URLRequest?
+    var urlRequest: URLRequest?
     fileprivate var response: RawResponse?
     fileprivate var task: URLSessionTask?
 

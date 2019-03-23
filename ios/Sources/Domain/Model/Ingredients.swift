@@ -7,8 +7,8 @@
 //
 
 class Ingredients: Decodable {
-    let juices: [Liquid] = []
-    let drinks: [Liquid] = []
-    let ingredients: [Solid] = []
-    let alcohols: [Liquid] = []
+    var juices: [Liquid] = []
+    var drinks: [Liquid] = []
+    var ingredients: [Solid] = []
+    var alcohols: [Liquid] = []
 }
