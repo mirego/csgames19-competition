@@ -10,6 +10,7 @@ import com.csgames.mixparadise.api.DrinkService
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientCallback
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.model.Ingredient
 import com.csgames.mixparadise.model.IngredientsResponse
 import com.csgames.mixparadise.model.Juice
 import kotlinx.android.synthetic.main.view_blender_with_table.*
@@ -74,25 +75,20 @@ class MainActivity : AppCompatActivity(), IngredientCallback {
         }
     }
 
-    // TODO: pass the juice
     override fun onJuiceSelected(juice: Juice) {
-        d("juice", juice.toString())
-        blender.addLiquid(juice.id, "#A66C1E", 0.5f)
+        blender.addLiquid(juice.id, juice.color, juice.opacity.toFloat())
     }
 
-    // TODO: pass the drink
-    private fun onDrinkSelected() {
-        blender.addLiquid("pepsi", "#A66C1E", 0.5f)
+    override fun onDrinkSelected(drink: Juice) {
+        blender.addLiquid(drink.id, drink.color, drink.opacity.toFloat())
     }
 
-    // TODO: pass the ingredient
-    private fun onIngredientSelected() {
+    override fun onIngredientSelected(ingredient: Ingredient) {
         blender.addSolidIngredient()
     }
 
-    // TODO: pass the alcohol
-    private fun onAlcoholSelected() {
-        blender.addLiquid("Four Loko", "#A66C1E", 0.5f)
+    override fun onAlcoholSelected(alcohol:Juice) {
+        blender.addLiquid(alcohol.id, alcohol.color, alcohol.opacity.toFloat())
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

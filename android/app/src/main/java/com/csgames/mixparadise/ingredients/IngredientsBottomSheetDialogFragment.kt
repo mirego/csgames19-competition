@@ -16,7 +16,10 @@ import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 
 interface IngredientCallback {
-    fun onJuiceSelected(juice: Juice);
+    fun onJuiceSelected(juice: Juice)
+    fun onDrinkSelected(drink: Juice)
+    fun onAlcoholSelected(alcohol: Juice)
+    fun onIngredientSelected(ingredient: Ingredient)
 }
 
 class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
@@ -49,7 +52,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             drinkAdapter = JuiceAdapter(MixParadiseApplication.ingredients.drinks, this!!.context!!, object:
                 JuiceAdapter.OnItemClickListener {
                 override fun onItemClickListener(item: Juice) {
-
+                    callback.onDrinkSelected(item)
                 }
             })
             it.drinks.adapter = drinkAdapter
@@ -59,7 +62,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             alcoholAdapter = JuiceAdapter(MixParadiseApplication.ingredients.alcohols, this!!.context!!, object:
                 JuiceAdapter.OnItemClickListener {
                 override fun onItemClickListener(item: Juice) {
-
+                    callback.onAlcoholSelected(item)
                 }
             })
             it.alcohols.adapter = alcoholAdapter
@@ -69,7 +72,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             ingredientAdapter = IngredientAdapter(MixParadiseApplication.ingredients.ingredients, this!!.context!!, object:
                 IngredientAdapter.OnItemClickListener {
                 override fun onItemClickListener(item: Ingredient) {
-
+                    callback.onIngredientSelected(item)
                 }
             })
             it.ingredients.adapter = ingredientAdapter
