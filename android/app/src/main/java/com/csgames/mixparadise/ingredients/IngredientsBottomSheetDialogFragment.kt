@@ -4,21 +4,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.ViewModelProviders.*
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.extensions.setImmersiveMode
-import com.csgames.mixparadise.model.IngredientsResponse
-import com.csgames.mixparadise.model.Liquid
+import com.csgames.mixparadise.model.Ingredient
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 
 typealias IngredientSelectedListener = (
-    id: String
+    ingredient: Ingredient
 ) -> Unit
 
 class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
@@ -47,7 +43,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private fun setupDialogView(dialogView: View) {
         Log.d(this::class.java.simpleName, "set up dialog")
         viewModel.ingredients.observe(this, Observer {
-            val adapter = IngredientsAdapter(it)
+            val adapter = IngredientsAdapter(it, ingredientSelectedListener!!)
             dialogView.ingredients.adapter = adapter
             dialogView.ingredients.layoutManager = GridLayoutManager(requireContext(), 4).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {

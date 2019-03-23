@@ -5,7 +5,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.csgames.mixparadise.extensions.*
+import com.csgames.mixparadise.ingredients.IngredientType
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.model.Ingredient
+import com.csgames.mixparadise.model.Liquid
+import com.csgames.mixparadise.model.Solid
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
 
@@ -48,30 +52,15 @@ class MainActivity : AppCompatActivity() {
     override fun onAttachFragment(fragment: Fragment?) {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
-            fragment.setIngredientSelectedListener { id ->
-
-            }
+            fragment.setIngredientSelectedListener { onIngredientSelected(it) }
         }
     }
 
-    // TODO: pass the juice
-    private fun onJuiceSelected() {
-        blender.addLiquid("orange", "#A66C1E", 0.5f)
-    }
-
-    // TODO: pass the drink
-    private fun onDrinkSelected() {
-        blender.addLiquid("pepsi", "#A66C1E", 0.5f)
-    }
-
-    // TODO: pass the ingredient
-    private fun onIngredientSelected() {
-        blender.addSolidIngredient()
-    }
-
-    // TODO: pass the alcohol
-    private fun onAlcoholSelected() {
-        blender.addLiquid("Four Loko", "#A66C1E", 0.5f)
+    private fun onIngredientSelected(ingredient: Ingredient) {
+        when (ingredient) {
+            is Liquid -> blender.addLiquid(ingredient.id, ingredient.color, ingredient.opacity)
+            is Solid -> blender.addSolidIngredient()
+        }
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
