@@ -8,7 +8,9 @@ import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
-
+import com.csgames.brock.*;
+import com.csgames.mixparadise.api.Api
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val ingredientsDialog = IngredientsBottomSheetDialogFragment()
     private val resultDialog = ResultDialogFragment()
     private lateinit var blender: Blender
+    private var ingredients: Ingredients? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         setupStackView()
         setupSolidIngredientsWrapper()
 
-        
+        var tmpIng: Ingredients? = FetchManager.getIngredients()
+
+
         blender = Blender(wave, stackView, solidIngredientsContainer, 10, {
             addIngredientsButton.visibility = View.GONE
             serveButton.visibility = View.VISIBLE
@@ -36,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupListeners(blender, ingredientsDialog)
+
+
     }
 
     private fun showResultDialog() {

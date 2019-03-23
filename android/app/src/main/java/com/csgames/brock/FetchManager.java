@@ -8,7 +8,6 @@ import java.net.URL;
 import com.google.gson.Gson;
 
 public class FetchManager {
-
     public static Ingredients getIngredients() {
         URL url;
         try {

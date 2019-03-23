@@ -2,10 +2,14 @@ package com.csgames.mixparadise.ingredients
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AlertController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
 import com.csgames.mixparadise.extensions.setImmersiveMode
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
 
 typealias IngredientSelectedListener = (
@@ -31,6 +35,8 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         dialogView.close.setOnClickListener {
             dismiss()
         }
+
+        // actually maybe here.
 
     }
 
