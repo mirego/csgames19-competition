@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/useless_background_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/useless_background_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="@string/our_rating"
+        android:textColor="@color/dark_grey_blue"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/dark_grey_blue"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="90%" />
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:textColor="@color/dark_grey_blue"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/percentage"
+        app:layout_constraintWidth_percent="0.5"
+        tools:text="Success my boy!" />
+
+    <TextView
+        android:id="@+id/taste_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/taste"
+        android:textColor="@color/dark_blue_grey"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comment"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/taste_progress_container"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taste_title"
+        app:layout_constraintWidth_percent="0.7">
+
+        <View
+            android:id="@+id/taste_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/taste_progress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_taste"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_width="100dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/volume_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/volume"
+        android:textColor="@color/dark_blue_grey"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taste_progress_container"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/volume_progress_container"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volume_title"
+        app:layout_constraintWidth_percent="0.7">
+
+        <View
+            android:id="@+id/volume_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/volume_progress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_volume"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_width="80dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/strength_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/strength"
+        android:textColor="@color/dark_blue_grey"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volume_progress_container"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/strength_progress_container"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strength_title"
+        app:layout_constraintWidth_percent="0.7">
+
+        <View
+            android:id="@+id/strength_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/strength_progress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_progress_bar_strength"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_width="200dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/background_button_dark"
+        android:fontFamily="@font/montserrat_bold"
+        android:foreground="?selectableItemBackground"
+        android:text="@string/new_drink_button"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

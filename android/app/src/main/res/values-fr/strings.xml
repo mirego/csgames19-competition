@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mix Paradise</string>
+
+    <string name="ingredients_dialog_title">Ajouter des ingrédients</string>
+    <string name="ingredients_dialog_subtitle">Tapez sur un ingrédient pour l\'ajouter\nautomatiquement au mélangeur</string>
+    <string name="juice_section_title">Jus</string>
+    <string name="drink_section_title">Boissons Gazeuses</string>
+    <string name="ingredient_section_title">Ingrédients</string>
+    <string name="alcohol_section_title">Alcool</string>
+    <string name="add_ingredients_button">Ajouter Ingrédients</string>
+    <string name="serve_button">Servir!</string>
+    <string name="new_drink_button">Nouveau drink</string>
+    <string name="our_rating">Notre évaluation</string>
+    <string name="taste">👌  Goût</string>
+    <string name="volume">⚗️  Volume</string>
+    <string name="strength">💪  Force</string>
+</resources>

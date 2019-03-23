@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/table"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:background="@color/dark_grey_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Space
+        android:id="@+id/blender_bottom_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/table"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/table" />
+
+    <ImageView
+        android:id="@+id/blender_glass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:alpha="0.5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/blender_glass"
+        app:layout_constraintBottom_toTopOf="@id/blender_bottom_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+        android:id="@+id/waveContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        app:layout_constraintBottom_toBottomOf="@id/blender_glass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/blender_glass"
+        app:layout_constraintWidth_percent="0.75"
+        app:mask="@drawable/blender_glass"
+        app:porterduffxfermode="DST_IN">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/solidIngredientsWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/solidIngredientsContainer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:dividerDrawable="@drawable/solid_ingredient_divider"
+                app:flexWrap="wrap_reverse"
+                app:justifyContent="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.50"
+                app:maxLine="5"
+                app:showDivider="middle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/stackView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical" />
+
+        <com.gelitenight.waveview.library.WaveView
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+    <ImageView
+        android:id="@+id/blenderView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/blender"
+        app:layout_constraintBottom_toTopOf="@id/blender_bottom_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <TextView
+        android:id="@+id/addIngredientsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        android:drawableStart="@drawable/ic_add"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:foreground="?selectableItemBackground"
+        android:text="@string/add_ingredients_button"
+        android:textColor="@color/dark_blue_grey"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/table"
+        app:layout_constraintEnd_toEndOf="@id/table"
+        app:layout_constraintStart_toStartOf="@id/table"
+        app:layout_constraintTop_toTopOf="@id/blender_bottom_guide" />
+
+    <TextView
+        android:id="@+id/serveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        android:drawableStart="@drawable/ic_umbrella"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:foreground="?selectableItemBackground"
+        android:text="@string/serve_button"
+        android:textColor="@color/dark_blue_grey"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/table"
+        app:layout_constraintEnd_toEndOf="@id/table"
+        app:layout_constraintStart_toStartOf="@id/table"
+        app:layout_constraintTop_toTopOf="@id/blender_bottom_guide" />
+
+</merge>

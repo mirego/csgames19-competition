@@ -27,6 +27,8 @@ extension RootViewController: RootViewDelegate {
     }
 
     func didTapServe() {
-        present(viewControllerFactory.resultViewController(), animated: true, completion: nil)
+        present(viewControllerFactory.resultViewController(), animated: true) {
+            self.mainView.resetBlender()
+        }
     }
 }
