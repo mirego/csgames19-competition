@@ -10,9 +10,15 @@ import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.model.Ingredient
+import com.csgames.mixparadise.model.IngredientCategories
 import com.csgames.mixparadise.model.IngredientCategory
 
-class IngredientCategoriesAdapter : RecyclerView.Adapter<IngredientCategoriesAdapter.IngredientCategoriesViewHolder>() {
+class IngredientCategoriesAdapter(val onIngredientClickedListener: OnIngredientClickedListener) : RecyclerView.Adapter<IngredientCategoriesAdapter.IngredientCategoriesViewHolder>() {
+
+    interface OnIngredientClickedListener {
+        fun onIngredientClicked(ingredient: Ingredient)
+    }
 
     var ingredientsCategories : List<IngredientCategory> = arrayListOf()
     set(value) {
@@ -40,10 +46,15 @@ class IngredientCategoriesAdapter : RecyclerView.Adapter<IngredientCategoriesAda
 
         fun bind(ingredientCategory: IngredientCategory) {
             categoryTitleTextView.text = ingredientCategory.category.title
-            val adapter = IngredientsAdapter()
+            val adapter = IngredientsAdapter(object : IngredientsAdapter.OnIngredientClickedListener {
+                override fun onIngredientClicked(ingredient: Ingredient) {
+                    onIngredientClickedListener.onIngredientClicked(ingredient)
+                }
+            })
             adapter.ingredients = ingredientCategory.ingredients
             ingredientsRecyclerView.layoutManager = GridLayoutManager(context, 4)
             ingredientsRecyclerView.adapter = adapter
+
         }
     }
 }
