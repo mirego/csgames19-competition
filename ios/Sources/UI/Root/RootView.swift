@@ -127,7 +127,7 @@ class RootView: UIView {
         bird6.pin.right(of: blender, aligned: .top).marginTop(100)
     }
 
-    func addIngredient(/* TODO Add a incredient!*/) {
+    func addIngredient(/* TODO Add a ingredient!*/) {
         pushButton.isEnabled = true
 
         // Use scene?.addColor(color: color) to add a liquid color layer
