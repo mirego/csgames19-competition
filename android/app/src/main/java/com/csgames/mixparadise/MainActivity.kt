@@ -51,27 +51,26 @@ class MainActivity : AppCompatActivity() {
             fragment.setIngredientSelectedListener { ingredient ->
                 when(ingredient){
                     is Juice -> onJuiceSelected(ingredient)
+                    is Drink -> onDrinkSelected(ingredient)
+                    is Alcohol -> onAlcoholSelected(ingredient)
+                    is Ingredient -> onIngredientSelected(ingredient)
                 }
             }
         }
     }
 
-    // TODO: pass the juice
     private fun onJuiceSelected(juice: Juice) {
         blender.addLiquid(juice.id, juice.color, juice.opacity)
     }
 
-    // TODO: pass the drink
     private fun onDrinkSelected(drink: Drink) {
         blender.addLiquid(drink.id, drink.color, drink.opacity)
     }
 
-    // TODO: pass the ingredient
     private fun onIngredientSelected(ingredient: Ingredient) {
         blender.addSolidIngredient(ingredient)
     }
 
-    // TODO: pass the alcohol
     private fun onAlcoholSelected(alcohol: Alcohol) {
         blender.addLiquid(alcohol.id, alcohol.color, alcohol.opacity)
     }

@@ -10,9 +10,7 @@ import retrofit2.http.Path
 
 
 interface DrinkService {
-    // TODO: get ingredients
     @Headers("Team: POLInux2")
     @GET("https://mirego-csgames19.herokuapp.com/ingredients?key="+ KEY)
     fun listIngredients(@Header("Authorization") authorizationHeader: String): Call<Ingredients>
-    // TODO: serve call
 }
