@@ -13,5 +13,22 @@ class MixParadiseApplication : Application() {
 
     companion object {
         lateinit var ingredients: IngredientsResponse
+        fun resetCounts() {
+            for(alcohol in ingredients.alcohols) {
+                alcohol.count = 0
+            }
+
+            for(juice in ingredients.juices) {
+                juice.count = 0
+            }
+
+            for(ingredient in ingredients.ingredients) {
+                ingredient.count = 0
+            }
+
+            for(drink in ingredients.drinks) {
+                drink.count = 0
+            }
+        }
     }
 }
