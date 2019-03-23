@@ -2,12 +2,21 @@ package com.csgames.mixparadise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.csgames.mixparadise.api.Api
+import com.csgames.mixparadise.api.IngredientsReturnModel
 import com.csgames.mixparadise.extensions.*
+import com.csgames.mixparadise.ingredients.IngredientSelectedListener
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.ingredients.MyAdapter
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
+import retrofit2.Call
+import retrofit2.Callback
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,13 +36,14 @@ class MainActivity : AppCompatActivity() {
         setupStackView()
         setupSolidIngredientsWrapper()
 
+
+
         blender = Blender(wave, stackView, solidIngredientsContainer, 10, {
             addIngredientsButton.visibility = View.GONE
             serveButton.visibility = View.VISIBLE
         }) {
             showResultDialog()
         }
-
         setupListeners(blender, ingredientsDialog)
     }
 
