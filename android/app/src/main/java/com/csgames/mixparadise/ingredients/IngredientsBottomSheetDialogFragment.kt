@@ -25,9 +25,9 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     private var ingredientSelectedListener: IngredientSelectedListener? = null
     private val ingredientsList = listOf(
-        IngredientToPicked("chat1", 1),
-        IngredientToPicked("chat2", 2),
-        IngredientToPicked("chat3", 3))
+        IngredientToPicked("Boule de poile", 1),
+        IngredientToPicked("Gustav", 2),
+        IngredientToPicked("Minet", 3))
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_ingredients_dialog, container, false).also {
@@ -49,7 +49,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         ingredients.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = IngredientAdapter(ingredientsList)
+            adapter = IngredientAdapter(ingredientsList, ingredientSelectedListener)
         }
     }
 

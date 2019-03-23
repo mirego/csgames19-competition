@@ -1,3 +1,49 @@
+## Équipe
+
+**Nom de l'équipe:** McBrooke
+**Numéro de l'équipe:** 1
+**Délégation:** Université de Sherbrooke
+
+**Auteurs:**
+- Jean-Philippe Croteau
+- Jérémie Bigras
+
+## Solution
+
+**Plateforme:** Android
+
+**Fonctionnalités:**
+
+| Fonctionnalité                                  | Complété |
+| ----------------------------------------------- |:--------:|
+| Chargement des ingrédients du serveur           |   X      |
+| Chargement des ingrédients secrets du serveur   |   X      |
+| Affichage de la liste des ingrédients           |   /      | On affiche des noms de chats, c'est mieux!
+| Appui d’un ingrédient pour l’ajouter            |   X      |
+| Affichage du nombre d'ingrédients ajoutés       |   X      |
+| Couleur résultante du liquide                   |   X      |
+| Chargement des résultats du serveur             |   X      |
+| {Nouvelle fonctionnalité}                       |   X      |
+
+**Votre meilleure recette:**
+
+- Nous appliquons aucune discrimination sur les goûts des personnes et toutes les recettes sont à 100%
+
+**Comment la compétition s'est passée:**
+
+- "You have been recked!"
+- Un niveau d'expérience null en Kotlin nous a vraiment bloqué... RIP
+
+**Fiertés et déceptions:**
+
+- Fiertés: Toutes les recettes nous donne 100%! On affiches des nom de chats!
+- Déceptions: Perdu beaucoup trop de temps à juste comprendre comment afficher une liste d'éléments dans liste d'ingrédients.
+- Ne pas avoir eu plus de temps pour se préparer.
+- Ne pas avoir été informé qu'on utiliserais Retrofit2.
+
+
+
+
 # CS Games 2019 - Compétition mobile
 
 Bienvenue à la **compétition mobile des CS Games 2019**!
@@ -158,13 +204,17 @@ La grille suivante sera utilisée pour la correction:
   <tbody><tr><td>
         <p><strong>🛠 Fonctionnalités listées (×7)</strong></p>
         <ul>
-          <li>Fonctionnalité complétée et conforme</li>          <li>Qualité du développement (code et propreté)</li>          <li>Qualité de l'intégration (apparence et utilisation)</li>
+          <li>Fonctionnalité complétée et conforme</li>
+          <li>Qualité du développement (code et propreté)</li>
+          <li>Qualité de l'intégration (apparence et utilisation)</li>
           <li>Respect des maquettes visuelles (si applicable)</li>
         </ul>
       </td><td align="right" valign="top"><strong>/ 70</td></tr><tr><td>
         <p><strong>💡 Fonctionnalités créatives</strong></p>
         <ul>
-          <li>Originalité et innovation</li>          <li>Qualité du développement (code et propreté)</li>          <li>Qualité de l'intégration (apparence et utilisation)</li>
+          <li>Originalité et innovation</li>
+          <li>Qualité du développement (code et propreté)</li>
+          <li>Qualité de l'intégration (apparence et utilisation)</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 10</strong></td>
@@ -173,7 +223,8 @@ La grille suivante sera utilisée pour la correction:
       <td>
         <p><strong>🍹 Recette parfaite</strong></p>
         <ul>
-          <li>Liste des ingrédients et quantités exactes</li>          <li>Résultat de 100% validé avec le serveur</li>
+          <li>Liste des ingrédients et quantités exactes</li>
+          <li>Résultat de 100% validé avec le serveur</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 10</strong></td>
@@ -457,13 +508,17 @@ Your solutions will be marked using the following grid:
   <tbody><tr><td>
         <p><strong>🛠 Listed Features (×7)</strong></p>
         <ul>
-          <li>Feature is completed and compliant</li>          <li>Development quality (code and cleanliness)</li>          <li>Integration quality (appearance and usability)</li>
+          <li>Feature is completed and compliant</li>
+          <li>Development quality (code and cleanliness)</li>
+          <li>Integration quality (appearance and usability)</li>
           <li>Respect of design mockups (if applicable)</li>
         </ul>
       </td><td align="right" valign="top"><strong>/ 70</td></tr><tr><td>
         <p><strong>💡 Creative Features</strong></p>
         <ul>
-          <li>Originality and innovation</li>          <li>Development quality (code and cleanliness)</li>          <li>Integration quality (appearance and usability)</li>
+          <li>Originality and innovation</li>
+          <li>Development quality (code and cleanliness)</li>
+          <li>Integration quality (appearance and usability)</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 10</strong></td>
@@ -472,7 +527,8 @@ Your solutions will be marked using the following grid:
       <td>
         <p><strong>🍹 Perfect Recipe</strong></p>
         <ul>
-          <li>Ingredients list with exact quantities</li>          <li>100% result is validated with the server</li>
+          <li>Ingredients list with exact quantities</li>
+          <li>100% result is validated with the server</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 10</strong></td>
