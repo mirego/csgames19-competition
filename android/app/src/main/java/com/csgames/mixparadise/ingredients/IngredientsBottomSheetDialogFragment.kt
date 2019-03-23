@@ -52,7 +52,9 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
             override fun onResponse(call: Call<Ingredients>, response: Response<Ingredients>) {
                 var list1 : ArrayList<BasicIngredient> = response.body()!!.ingredients.toCollection(ArrayList())
                 var list2 : ArrayList<BasicIngredient> = response.body()!!.juices.toCollection(ArrayList())
+                var list3 : ArrayList<BasicIngredient> = response.body()!!.alcohol.toCollection(ArrayList())
                 list1.addAll(list2)
+                list1.addAll(list3)
                 ingredients.adapter = IngredientsAdapter(list1)
                 // Set layout manager to position the items
                 ingredients.layoutManager = LinearLayoutManager(context)

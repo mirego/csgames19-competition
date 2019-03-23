@@ -1,6 +1,5 @@
 package com.csgames.mixparadise.ingredients
 
-import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
 abstract class BasicIngredient{
@@ -11,7 +10,7 @@ abstract class BasicIngredient{
 data class Ingredients(
     @SerializedName("juices") val juices: Array<Juice>,
     @SerializedName("ingredients") val ingredients: Array<Ingredient>,
-    @SerializedName("alcohol") val alcohol: Array<Alcohol>
+    @SerializedName("alcohols") val alcohol: Array<Alcohol>
 )
 
 data class Ingredient(
