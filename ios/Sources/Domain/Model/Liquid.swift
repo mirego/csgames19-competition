@@ -6,7 +6,11 @@
 //  Copyright © 2019 Mirego. All rights reserved.
 //
 
-class Liquid: Ingredient {
-    let color: String
-    let opacity: Double
+class Liquid: Decodable {
+    let id: String = ""
+    let label: String = ""
+    let type: String = ""
+    let imageUrl: String = ""
+    let color: String = "#FFFFFF"
+    let opacity: Double = 0
 }

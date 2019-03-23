@@ -30,7 +30,7 @@ class PushButton: UIButton {
 
         pushLabel.text = "Push"
         addSubview(pushLabel)
-
+        
         size = CGSize(width: 56, height: 56)
     }
 

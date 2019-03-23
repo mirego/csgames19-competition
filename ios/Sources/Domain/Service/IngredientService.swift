@@ -9,7 +9,7 @@
 import Foundation
 
 class IngredientService {
-    func getList(callback: ([Ingredients]?, RequestError?) -> Void) {
+    func getList(callback: @escaping (Ingredients?, RequestError?) -> Void) {
         Request("\(Config.host)ingredients").auth().object { (res: ObjectResponse<Ingredients>) in
             return callback(res.object, res.error)
         }

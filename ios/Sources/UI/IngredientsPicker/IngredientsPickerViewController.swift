@@ -8,9 +8,9 @@ class IngredientsPickerViewController: BaseViewController {
     }
 
     init(_ service: IngredientService) {
+        self.service = service
         super.init(nibName: nil, bundle: nil)
 
-        self.service = service
         modalPresentationStyle = .custom
         transitioningDelegate = self
     }
@@ -33,6 +33,7 @@ class IngredientsPickerViewController: BaseViewController {
                 let alert = UIAlertController(title: "Error", message: "Could not get your paradise, mix again later.", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                return
             }
 
             self.mainView.configure(ingredients: ingredients!)

@@ -9,8 +9,8 @@
 import Foundation
 
 class Ingredient: Decodable {
-    let id: String
-    let label: String
-    let type: String
-    let imageUrl: String
+    let id: String = ""
+    let label: String = ""
+    let type: String = ""
+    let imageUrl: String = ""
 }

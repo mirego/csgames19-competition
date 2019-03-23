@@ -8,8 +8,8 @@
 
 
 class Ingredients: Decodable {
-    let juices: [Liquid]
-    let drinks: [Liquid]
-    let ingredients: [Solid]
-    let alcohols: [Liquid]
+    let juices: [Liquid] = []
+    let drinks: [Liquid] = []
+    let ingredients: [Solid] = []
+    let alcohols: [Liquid] = []
 }
