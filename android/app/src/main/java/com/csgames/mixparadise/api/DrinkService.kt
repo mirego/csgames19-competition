@@ -1,6 +1,7 @@
 package com.csgames.mixparadise.api
 
 import com.csgames.mixparadise.model.IngredientList
+import com.csgames.mixparadise.model.RecipeIngredient
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -15,7 +16,7 @@ interface DrinkService {
     // TODO: serve call
     @Headers("Team: xargonauts")
     @POST("serve")
-    fun submitRecipe(): Call<Recipe>
+    fun submitRecipe(): Call<RecipeIngredient>
  /*
  “I see Jesus in every human being.
  I say to myself, this is hungry Jesus, I must feed him.
