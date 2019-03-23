@@ -14,4 +14,6 @@ class IngredientService {
             return callback(res.object, res.error)
         }
     }
+
+    //func serve(ingredients: [Ingredient], callback: (RequestError?) -> Void)
 }

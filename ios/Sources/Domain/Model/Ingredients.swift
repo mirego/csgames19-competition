@@ -6,7 +6,6 @@
 //  Copyright © 2019 Mirego. All rights reserved.
 //
 
-
 class Ingredients: Decodable {
     let juices: [Liquid] = []
     let drinks: [Liquid] = []

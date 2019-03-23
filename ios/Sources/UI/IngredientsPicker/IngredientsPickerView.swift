@@ -10,7 +10,13 @@ class IngredientsPickerView: UIView {
 
     private let closeButton = ExtendedButton(type: .custom)
     private let loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
-    private var ingredients: Ingredients?
+
+    private let juiceHeader: TitleLabel = TitleLabel(title: "Juice")
+    private let drinkHeader: TitleLabel = TitleLabel(title: "Soft Drink")
+    private let ingredientHeader: TitleLabel = TitleLabel(title: "Ingredient")
+    private let alchoolHeader: TitleLabel = TitleLabel(title: "Alcohol")
+
+    private var ingredients: [Ingredient]?
 
     weak var delegate: IngredientsPickerViewDelegate?
 
@@ -32,6 +38,11 @@ class IngredientsPickerView: UIView {
 
         loadingIndicator.color = .darkGreyBlue
         addSubview(loadingIndicator)
+
+        self.addSubview(self.juiceHeader)
+        self.addSubview(self.drinkHeader)
+        self.addSubview(self.ingredientHeader)
+        self.addSubview(self.alchoolHeader)
     }
 
     required init(coder aDecoder: NSCoder) {
