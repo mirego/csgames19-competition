@@ -7,6 +7,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface DrinkService {
     @GET("/ingredients")
@@ -15,6 +16,6 @@ interface DrinkService {
     @POST("/serve")
     fun serve(@Body serveRequest: PostServeRequest) : Call<PostServeResponse>
 
-    @GET("/ingredients/key=tv8PDnId7ylIwGEQ5naooq3wnL205RNRULAVAL")
-    fun getSecretIngredients() : Call<GetIngredientsResponse>
+    @GET("/ingredients")
+    fun getSecretIngredients(@Query(value="key") key: String) : Call<GetIngredientsResponse>
 }
