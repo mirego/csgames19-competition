@@ -5,9 +5,11 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnLayout
+import androidx.lifecycle.ViewModelProviders
 import com.csgames.mixparadise.Blender
 import com.csgames.mixparadise.MainActivity
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.ingredients.IngredientsViewModel
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 
 private const val ADD_INGREDIENTS_FRAGMENT_TAG = "ADD_INGREDIENTS_FRAGMENT_TAG"
@@ -31,6 +33,8 @@ fun MainActivity.setupSolidIngredientsWrapper() {
 }
 
 fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: IngredientsBottomSheetDialogFragment) {
+    val viewModel = ViewModelProviders.of(this)[IngredientsViewModel::class.java]
+
     blenderView.setOnTouchListener { _, event ->
         if (event.action == MotionEvent.ACTION_DOWN) {
             blender.start()
@@ -45,6 +49,7 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
         blender.empty()
         addIngredientsButton.visibility = View.VISIBLE
         serveButton.visibility = View.GONE
+        viewModel.serveBeverage()
     }
 
     addIngredientsButton.setOnClickListener {
@@ -58,7 +63,6 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
                 blender.ingredientsIdToOunces
             )
         }
-
 
         ingredientsDialog.show(supportFragmentManager, ADD_INGREDIENTS_FRAGMENT_TAG)
     }
