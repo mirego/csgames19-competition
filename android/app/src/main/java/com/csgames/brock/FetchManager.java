@@ -1,5 +1,3 @@
-package com.csgames.brock;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -10,12 +8,7 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.codec.digest.DigestUtils;
-
 import com.google.gson.Gson;
-
 import ServeResponse.Recipe;
 import ServeResponse.DrinkReview;
 
@@ -37,11 +30,12 @@ public class FetchManager {
 	/*
 	 * Gets all the ingredients.
 	 * 
-	 * AUTHENTICATED.
+	 * AUTHENTICATION WORKS.
 	 */
 	public static Ingredients getIngredients() {
 		URL url;
 		UUID uuid = UUID.randomUUID();
+		StringBuilder sb = new StringBuilder();
 		String key = uuid.toString();
 		try {
 			url = new URL("https://mirego-csgames19.herokuapp.com/ingredients?key=" + key);
@@ -123,21 +117,12 @@ public class FetchManager {
     { 
         try { 
             MessageDigest md = MessageDigest.getInstance("SHA-1"); 
-  
             byte[] messageDigest = md.digest(input.getBytes()); 
-  
-            // Convert byte array into signum representation 
             BigInteger no = new BigInteger(1, messageDigest); 
-  
-            // Convert message digest into hex value 
             String hashtext = no.toString(16); 
-  
-            // Add preceding 0s to make it 32 bit 
             while (hashtext.length() < 32) { 
                 hashtext = "0" + hashtext; 
             } 
-  
-            // return the HashText 
             return hashtext; 
         } 
   
@@ -146,17 +131,4 @@ public class FetchManager {
             throw new RuntimeException(e); 
         } 
     } 
-
-	//------------ EXAMPLES BELOW ---------------
-	private static void EXAMPLE_serve() {
-		// serve example. 
-		ArrayList<Recipe> recipes = new ArrayList<Recipe>();
-		Recipe r = new Recipe("orange", 2);
-		Recipe m = new Recipe("mint", 1);
-		recipes.add(r);
-		recipes.add(m);
-
-		DrinkReview drinkReview = postServe(recipes);
-		System.out.println(drinkReview.getReview().getVolume());
-	}
 }
