@@ -45,20 +45,8 @@ class MainActivity : AppCompatActivity() {
         Api.drinkService.getIngredients().enqueue(object : Callback<IngredientsResponse> {
             override fun onResponse(call: Call<IngredientsResponse>, response: Response<IngredientsResponse>) {
                 val juices = response.body()!!.juices
-                val alcohols = response.body()!!.drinks
-                d("ingredients raw", juices.toString())
-                d("ingredients", "number of juices ${juices.size}")
-                d("ingredients", "number of alc ${alcohols.size}")
-
-                d("Ingredients label:", juices[0].label)
-                d("Ingredients :", juices[0].color)
-                d("Ingredients label:", juices[0].type)
-                d("Ingredients label:", juices[0].opacity.toString())
-
-                d("alcohols:", alcohols[0].label)
-                d("alcohols", alcohols[0].color)
-                d("alcohols", alcohols[0].type)
-                d("alcohols", alcohols[0].opacity.toString())
+                val alcohols = response.body()!!.alcohols
+                val drinks = response.body()!!.drinks
             }
             override fun onFailure(call: Call<IngredientsResponse>, t: Throwable) {
                 d("ingredients", t.message)

@@ -7,8 +7,7 @@ import retrofit2.http.Query
 
 interface DrinkService {
     @GET("ingredients")
-    fun getIngredients(): Call<IngredientsResponse>
-
+    fun getIngredients(@Query("key") key:String = Api.KEY): Call<IngredientsResponse>
 
     // TODO: serve call
 }
