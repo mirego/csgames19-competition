@@ -1,0 +1,6 @@
+module MRGTaylor {
+  umbrella header "MRGTaylor-umbrella.h"
+
+  export *
+  module * { export * }
+}

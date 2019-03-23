@@ -38,7 +38,8 @@ class RootView: UIView {
     }()
 
     weak var delegate: RootViewDelegate?
-
+    var dataSource: Juice?
+    
     init() {
         super.init(frame: .zero)
 
@@ -127,12 +128,16 @@ class RootView: UIView {
         bird6.pin.right(of: blender, aligned: .top).marginTop(100)
     }
 
-    func addIngredient(/* TODO Add a incredient!*/) {
+    func addIngredient(juice: Juice?) {
         pushButton.isEnabled = true
-
+        guard let imageUrl = URL(string: juice?.imageUrl ?? "") else { return }
+        let imageData = try! Data(contentsOf: imageUrl)
+        let image = UIImage(data: imageData)
+        scene?.addSolid(image: image)
         // Use scene?.addColor(color: color) to add a liquid color layer
         // Use scene?.addSolid(image: image) to add a solid (ice, sugar, basil, etc...)
-        scene?.addColor(color: UIColor.red)
+        let color = UIColor(hexString: juice?.color ?? "")
+        scene?.addColor(color: color ?? .red)
     }
 
     func resetBlender() {

@@ -4,7 +4,7 @@ class RootViewController: BaseViewController {
     private var mainView: RootView {
         return self.view as! RootView
     }
-
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -17,12 +17,23 @@ class RootViewController: BaseViewController {
         view = RootView()
         mainView.delegate = self
     }
+    
 }
 
-extension RootViewController: RootViewDelegate {
+extension RootViewController: RootViewDelegate, IngredientsPickerViewDelegate {
+    func didTapCloseButton() {
+        
+    }
+    
+    func addIngredient(juice: Juice?) {
+        self.mainView.addIngredient(juice: juice)
+    }
+    
+    
     func didTapAddIngredient() {
-        present(viewControllerFactory.ingredientsPickerViewController(), animated: true) {
-            self.mainView.addIngredient()
+        let controller = viewControllerFactory.ingredientsPickerViewController()
+        present(controller, animated: true) {
+            
         }
     }
 

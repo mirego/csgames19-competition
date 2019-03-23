@@ -42,6 +42,10 @@
 		E1E8CC1822357D4E0071D5C3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1022357D4E0071D5C3 /* Montserrat-Regular.otf */; };
 		E1E8CC1922357D4E0071D5C3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */; };
 		E1E8CC1A22357D4E0071D5C3 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */; };
+		F572AD932246B1F5005C2CF1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F572AD922246B1F5005C2CF1 /* Model.swift */; };
+		F572AD952246B67D005C2CF1 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F572AD942246B67D005C2CF1 /* PickerCell.swift */; };
+		F572AD972246B87D005C2CF1 /* CachableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F572AD962246B87D005C2CF1 /* CachableImage.swift */; };
+		F572AD992246B8BA005C2CF1 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F572AD982246B8BA005C2CF1 /* NetworkServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,10 @@
 		E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		F261BA5C869B21CEE859688B /* Pods-MixParadise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.debug.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.debug.xcconfig"; sourceTree = "<group>"; };
+		F572AD922246B1F5005C2CF1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F572AD942246B67D005C2CF1 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		F572AD962246B87D005C2CF1 /* CachableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableImage.swift; sourceTree = "<group>"; };
+		F572AD982246B8BA005C2CF1 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,8 @@
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
 				E1540559220E5E8500188638 /* SupportingFiles */,
+				F572AD922246B1F5005C2CF1 /* Model.swift */,
+				F572AD982246B8BA005C2CF1 /* NetworkServices.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 			children = (
 				E1E8CBBD223335C40071D5C3 /* IngredientsPickerViewController.swift */,
 				E1E8CBC3223335F90071D5C3 /* IngredientsPickerView.swift */,
+				F572AD942246B67D005C2CF1 /* PickerCell.swift */,
+				F572AD962246B87D005C2CF1 /* CachableImage.swift */,
 			);
 			path = IngredientsPicker;
 			sourceTree = "<group>";
@@ -397,7 +409,9 @@
 			files = (
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
+				F572AD952246B67D005C2CF1 /* PickerCell.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
+				F572AD972246B87D005C2CF1 /* CachableImage.swift in Sources */,
 				E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */,
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
 				E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */,
@@ -413,7 +427,9 @@
 				E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */,
 				E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */,
 				09442599223581D100F15D5E /* LiquidScene.swift in Sources */,
+				F572AD992246B8BA005C2CF1 /* NetworkServices.swift in Sources */,
 				E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */,
+				F572AD932246B1F5005C2CF1 /* Model.swift in Sources */,
 				E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */,
 				E158FC2D224319F5000EA79B /* ResultViewController.swift in Sources */,
 			);

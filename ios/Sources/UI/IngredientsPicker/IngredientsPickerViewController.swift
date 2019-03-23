@@ -1,10 +1,16 @@
 import UIKit
 
+protocol IngredientsPickerViewControllerDelegate: AnyObject {
+    func addIngredient(juice: Juice)
+}
+
 class IngredientsPickerViewController: BaseViewController {
     private var mainView: IngredientsPickerView {
         return self.view as! IngredientsPickerView
     }
-
+    
+    var delegate: IngredientsPickerViewControllerDelegate?
+    
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -35,6 +41,10 @@ extension IngredientsPickerViewController: UIViewControllerTransitioningDelegate
 }
 
 extension IngredientsPickerViewController: IngredientsPickerViewDelegate {
+    func addIngredient(juice: Juice?) {
+        
+    }
+    
     func didTapCloseButton() {
         dismiss(animated: true, completion: nil)
     }
