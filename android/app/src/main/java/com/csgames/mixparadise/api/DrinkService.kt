@@ -15,6 +15,4 @@ interface DrinkService {
 
     @POST("serve")
     fun serveRecipe(@Body List<ServeItem>) :Call<ServeResponse>
-
-    // TODO: serve call
 }
