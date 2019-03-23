@@ -4,11 +4,8 @@ class RootViewController: BaseViewController {
     private var mainView: RootView {
         return self.view as! RootView
     }
-    
-    private var dataSource: DataSource
 
     init() {
-        dataSource = DataSource()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,7 +22,6 @@ class RootViewController: BaseViewController {
 extension RootViewController: RootViewDelegate {
     func didTapAddIngredient() {
         present(viewControllerFactory.ingredientsPickerViewController(), animated: true) {
-            self.dataSource.getIngredients()
             self.mainView.addIngredient()
         }
     }

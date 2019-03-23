@@ -8,6 +8,8 @@ protocol DataSourceDelegate: class {
 class DataSource: NSObject {
     //fileprivate let API = "https://mirego-csgames19.herokuapp.com/"
     
+
+    
     fileprivate let API_INGREDIENTS = "https://mirego-csgames19.herokuapp.com/ingredients"
     
     fileprivate let headers : HTTPHeaders = [
@@ -17,6 +19,7 @@ class DataSource: NSObject {
     fileprivate let API_SERVE = "https://mirego-csgames19.herokuapp.com/serve"
     //    fileprivate(set) var currentDate: Date?
     weak var delegate: DataSourceDelegate?
+    var ingView: IngredientsPickerViewController?
     
     func getIngredients() {
         Alamofire.request(API_INGREDIENTS, headers: headers).responseJSON{ response in
@@ -59,6 +62,8 @@ class DataSource: NSObject {
             case .success(let data):
                 do {
                     print(data)
+                    print(type(of: data))
+                    self.ingView?.updateView(data: data as! NSDictionary)
                     //                    let time = try JSONDecoder().decode(Time.self, from: data)
                     //                    self.currentDate = time.date
                 } catch {
@@ -73,7 +78,9 @@ class DataSource: NSObject {
             self.delegate?.didRefreshData()
         }
     }
-    
+    func setView(view: IngredientsPickerViewController) {
+        self.ingView = view
+    }
     func serve() {
         
     }

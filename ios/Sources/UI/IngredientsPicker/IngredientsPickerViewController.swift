@@ -1,13 +1,16 @@
 import UIKit
 
 class IngredientsPickerViewController: BaseViewController {
+    
+    private var dataSource: DataSource
+    
     private var mainView: IngredientsPickerView {
         return self.view as! IngredientsPickerView
     }
 
     init() {
+        dataSource = DataSource()
         super.init(nibName: nil, bundle: nil)
-
         modalPresentationStyle = .custom
         transitioningDelegate = self
     }
@@ -25,6 +28,13 @@ class IngredientsPickerViewController: BaseViewController {
         super.viewDidLoad()
 
         mainView.isLoading = true
+        self.dataSource.setView(view: self)
+        self.dataSource.getSecretIngredients()
+    }
+    
+    func updateView(data: NSDictionary) {
+        mainView.isLoading = false
+        print(data)
     }
 }
 
