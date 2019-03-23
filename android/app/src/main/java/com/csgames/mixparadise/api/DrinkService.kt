@@ -20,4 +20,7 @@ interface DrinkService {
 
 
     // TODO: serve call
+    @POST("/serve")
+    fun serve(@Body serveRequest: ServeRequest) : Call<ServeResponse>
+
 }
