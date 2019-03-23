@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.view_result_dialog.view.*
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.doOnLayout
+import com.csgames.mixparadise.MixParadiseApplication
 import nl.dionsegijn.konfetti.KonfettiView
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
@@ -21,6 +22,8 @@ class ResultDialogFragment : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_result_dialog, container, false).also {
             setupDialogView(it)
+
+            MixParadiseApplication.resetCounts()
         }
     }
 
