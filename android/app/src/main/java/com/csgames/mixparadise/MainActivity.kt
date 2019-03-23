@@ -3,6 +3,7 @@ package com.csgames.mixparadise
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
             fragment.setIngredientSelectedListener { id ->
-
+                Toast.makeText(this@MainActivity, "You clicked the button.", Toast.LENGTH_SHORT).show()
             }
         }
     }
