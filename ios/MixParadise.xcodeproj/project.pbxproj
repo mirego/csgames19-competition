@@ -42,6 +42,11 @@
 		E1E8CC1822357D4E0071D5C3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1022357D4E0071D5C3 /* Montserrat-Regular.otf */; };
 		E1E8CC1922357D4E0071D5C3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */; };
 		E1E8CC1A22357D4E0071D5C3 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */; };
+		FE41CEE92246A79E00F9136E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE42246A79D00F9136E /* Request.swift */; };
+		FE41CEEA2246A79E00F9136E /* String+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE52246A79D00F9136E /* String+FrigKit.swift */; };
+		FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */; };
+		FE41CEEC2246A79E00F9136E /* UIView+FrigKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */; };
+		FE41CEED2246A79E00F9136E /* JSONWebToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41CEE82246A79E00F9136E /* JSONWebToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +93,11 @@
 		E1E8CC1122357D4E0071D5C3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		E1E8CC1222357D4E0071D5C3 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		F261BA5C869B21CEE859688B /* Pods-MixParadise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.debug.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.debug.xcconfig"; sourceTree = "<group>"; };
+		FE41CEE42246A79D00F9136E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FE41CEE52246A79D00F9136E /* String+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FrigKit.swift"; sourceTree = "<group>"; };
+		FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FrigKit.swift"; sourceTree = "<group>"; };
+		FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FrigKit.swift"; sourceTree = "<group>"; };
+		FE41CEE82246A79E00F9136E /* JSONWebToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWebToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +151,7 @@
 		E1540544220E5B9A00188638 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FE41CEE32246A78500F9136E /* Helpers */,
 				E1540545220E5B9A00188638 /* AppDelegate.swift */,
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
@@ -287,6 +298,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE41CEE32246A78500F9136E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FE41CEE82246A79E00F9136E /* JSONWebToken.swift */,
+				FE41CEE42246A79D00F9136E /* Request.swift */,
+				FE41CEE52246A79D00F9136E /* String+FrigKit.swift */,
+				FE41CEE62246A79E00F9136E /* UIColor+FrigKit.swift */,
+				FE41CEE72246A79E00F9136E /* UIView+FrigKit.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE41CEEB2246A79E00F9136E /* UIColor+FrigKit.swift in Sources */,
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
@@ -402,6 +426,7 @@
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
 				E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */,
 				094425952235800100F15D5E /* IngredientNode.m in Sources */,
+				FE41CEED2246A79E00F9136E /* JSONWebToken.swift in Sources */,
 				E1E8CBC7223336AA0071D5C3 /* ViewControllerFactory.swift in Sources */,
 				E1E8CBCA2233390B0071D5C3 /* BaseViewController.swift in Sources */,
 				E158FC3722443F73000EA79B /* ProgressView.swift in Sources */,
@@ -410,8 +435,11 @@
 				094425922235800100F15D5E /* GameScene.m in Sources */,
 				E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */,
 				E1E8CBF4223358080071D5C3 /* ComponentFactory.swift in Sources */,
+				FE41CEE92246A79E00F9136E /* Request.swift in Sources */,
 				E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */,
 				E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */,
+				FE41CEEA2246A79E00F9136E /* String+FrigKit.swift in Sources */,
+				FE41CEEC2246A79E00F9136E /* UIView+FrigKit.swift in Sources */,
 				09442599223581D100F15D5E /* LiquidScene.swift in Sources */,
 				E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */,
 				E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */,
