@@ -35,7 +35,7 @@ class ResultDialogFragment : DialogFragment() {
             WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
 
         dialogView.percentage.text =
-            String.format(requireContext().getString(R.string.percentage), 50)
+            String.format(requireContext().getString(R.string.percentage), 100)
         dialogView.comment.text = "mmhhh"
 
         setProgress(dialogView.taste_progress_container, R.id.taste_progress, 50 / 100f)

@@ -49,7 +49,7 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         ingredients.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = IngredientAdapter(ingredientsList)
+            adapter = IngredientAdapter(ingredientsList, ingredientSelectedListener)
         }
     }
 
