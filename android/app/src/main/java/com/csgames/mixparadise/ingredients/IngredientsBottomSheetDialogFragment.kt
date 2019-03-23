@@ -1,12 +1,21 @@
 package com.csgames.mixparadise.ingredients
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.api.Api
 import com.csgames.mixparadise.extensions.setImmersiveMode
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.view_ingredients_dialog.*
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 
 typealias IngredientSelectedListener = (
     id: String
@@ -31,7 +40,22 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
         dialogView.close.setOnClickListener {
             dismiss()
         }
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Api.drinkService.listIngredients().enqueue(object : Callback<Ingredients> {
+            override fun onFailure(call: Call<Ingredients>, t: Throwable) {
+                Log.e("FAILLLLLLLL", t.message)
+            }
+
+            override fun onResponse(call: Call<Ingredients>, response: Response<Ingredients>) {
+                ingredients.adapter = IngredientsAdapter(response.body()!!.ingredients.toCollection(ArrayList()))
+                // Set layout manager to position the items
+                ingredients.layoutManager = LinearLayoutManager(context)
+                Log.e("HELLLOOOOOO", response.body()!!.ingredients[0].id)
+            }
+        })
     }
 
     fun setIngredientSelectedListener(ingredientSelectedListener: IngredientSelectedListener) {
