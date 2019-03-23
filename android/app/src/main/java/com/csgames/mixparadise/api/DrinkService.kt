@@ -16,5 +16,5 @@ interface DrinkService {
     fun serve(@Body serveRequest: PostServeRequest) : Call<PostServeResponse>
 
     @GET("/ingredients/key=tv8PDnId7ylIwGEQ5naooq3wnL205RNRULAVAL")
-    fun getSecretIngredients() : Call<List<GetIngredientsResponse>>
+    fun getSecretIngredients() : Call<GetIngredientsResponse>
 }
