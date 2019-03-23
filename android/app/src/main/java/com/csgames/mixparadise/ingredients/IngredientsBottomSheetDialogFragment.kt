@@ -1,12 +1,27 @@
 package com.csgames.mixparadise.ingredients
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.system.Os.open
+import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.csgames.mixparadise.R
+import com.csgames.mixparadise.api.Api
+import com.csgames.mixparadise.api.Model
 import com.csgames.mixparadise.extensions.setImmersiveMode
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.view_ingredients_dialog.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.InputStream
 
 typealias IngredientSelectedListener = (
     id: String
@@ -44,6 +59,23 @@ class IngredientsBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onStart() {
         super.onStart()
+
+        val call = Api.drinkService.getIngredients()
+
+        call.enqueue(object : Callback<com.csgames.mixparadise.api.Model.Result> {
+            override fun onFailure(call: Call<com.csgames.mixparadise.api.Model.Result>?, t: Throwable?) {
+                t?.printStackTrace()
+            }
+
+            override fun onResponse(call: Call<com.csgames.mixparadise.api.Model.Result>?, response: Response<com.csgames.mixparadise.api.Model.Result>?) {
+                val viewManager = LinearLayoutManager(activity)
+//                val viewAdapter = LiquidIngredientAdapter(response?.body()?.juices)
+
+                var recyclerView = view?.findViewById<RecyclerView>(R.id.juices)
+                recyclerView?.layoutManager = viewManager
+//                recyclerView?.adapter = viewAdapter
+            }
+        })
 
         dialog?.findViewById<View>(R.id.design_bottom_sheet)?.let { bottomSheet ->
             BottomSheetBehavior.from(bottomSheet).isHideable = false
