@@ -28,16 +28,15 @@ class ProgressView: UIView {
     }
 
     func configure(progress: Int) {
-        let startRect = CGRect(x: 0, y: 0, width: 1, height: height)
+        let startRect = CGRect(x: 0, y: 0, width: 0, height: height)
         let finalRect = CGRect(x: 0, y: 0, width: width * CGFloat(progress) / 100.f, height: height)
         progressLayer.path = UIBezierPath(roundedRect: finalRect, cornerRadius: height / 2).cgPath
-        /*
         let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = UIBezierPath(roundedRect: startRect, cornerRadius: height / 2).cgPath
         animation.toValue = progressLayer.path
         animation.duration = 1
         animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         animation.isRemovedOnCompletion = false
-        progressLayer.add(animation, forKey: animation.keyPath)*/
+        progressLayer.add(animation, forKey: animation.keyPath)
     }
 }

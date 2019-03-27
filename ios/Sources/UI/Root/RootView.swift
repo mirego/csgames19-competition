@@ -127,12 +127,14 @@ class RootView: UIView {
         bird6.pin.right(of: blender, aligned: .top).marginTop(100)
     }
 
-    func addIngredient(/* TODO Add a incredient!*/) {
+    func addIngredient(with ingredient: BlenderIngredientViewModel) {
         pushButton.isEnabled = true
-
-        // Use scene?.addColor(color: color) to add a liquid color layer
-        // Use scene?.addSolid(image: image) to add a solid (ice, sugar, basil, etc...)
-        scene?.addColor(color: UIColor.red)
+        switch ingredient.content {
+        case .liquid(let color):
+            scene?.addColor(color: color)
+        case .solid(let image):
+            scene?.addSolid(image: image)
+        }
     }
 
     func resetBlender() {
