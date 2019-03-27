@@ -5,7 +5,10 @@ class ResultViewController: BaseViewController {
         return self.view as! ResultView
     }
 
-    init() {
+    private let viewModel: ResultPageViewModel
+
+    init(viewModel: ResultPageViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
 
         modalPresentationStyle = .custom
@@ -23,13 +26,18 @@ class ResultViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.isLoading = true
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        mainView.configure()
-        mainView.isLoading = false
+        mainView.isLoading = true
+
+        viewModel.getResult { [weak self] (result) in
+            self?.mainView.isLoading = false
+            switch result {
+            case .Error(let error):
+                print("Error: \(error)")
+            case .Succes(let resultViewModel):
+                self?.mainView.configure(viewModel: resultViewModel)
+            }
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {

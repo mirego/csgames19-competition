@@ -121,11 +121,11 @@ class ResultView: UIView {
         cheerView.pin.all()
     }
 
-    func configure() {
-        subTitle.text = "Call the backend!"
-        tasteProgress.configure(progress: 10)
-        volumeProgress.configure(progress: 20)
-        strengthProgress.configure(progress: 30)
+    func configure(viewModel: ResultViewModel) {
+        subTitle.text = viewModel.subTitle
+        tasteProgress.configure(progress: viewModel.tasteResult)
+        volumeProgress.configure(progress: viewModel.volumeResult)
+        strengthProgress.configure(progress: viewModel.strengthResult)
 
         UIView.animate(withDuration: 0.2) {
             self.contentView.alpha = 1
@@ -134,19 +134,14 @@ class ResultView: UIView {
         UIView.animate(withDuration: 0.2, animations: {
             self.contentView.alpha = 1
         }) { (_) in
-            self.startRatingAnimation(finalRating: 10, nextRating: 0)
+            self.startRatingAnimation(finalRating: viewModel.grade, nextRating: 0)
         }
         setNeedsLayout()
 
-        let success = false
-        if success {
-            showConfetti()
-        }
-    }
-
-    private func showConfetti() {
-        delay(1.5) { [weak self] in
-            self?.cheerView.start()
+        if viewModel.grade == 100 {
+            delay(1.5) { [weak self] in
+                self?.cheerView.start()
+            }
         }
     }
 
@@ -165,9 +160,4 @@ class ResultView: UIView {
             }
         }
     }
-}
-
-func delay(_ delay: Double, closure:@escaping () -> (Void)) {
-    let time = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-    DispatchQueue.main.asyncAfter(deadline: time, execute: closure)
 }

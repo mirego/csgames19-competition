@@ -15,12 +15,23 @@
 		094425962235800100F15D5E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0944258E2235800100F15D5E /* GameScene.sks */; };
 		094425972235800100F15D5E /* Droplet.png in Resources */ = {isa = PBXBuildFile; fileRef = 0944258F2235800100F15D5E /* Droplet.png */; };
 		09442599223581D100F15D5E /* LiquidScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09442598223581D100F15D5E /* LiquidScene.swift */; };
+		099410C02245AC80007D0D13 /* BlenderIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099410BF2245AC80007D0D13 /* BlenderIngredientViewModel.swift */; };
+		E14CDA7B224584AD00A5804E /* ServeIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CDA7A224584AD00A5804E /* ServeIngredient.swift */; };
+		E14CDA7D2245854D00A5804E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CDA7C2245854D00A5804E /* ServeResponse.swift */; };
+		E14CDA7F2245857E00A5804E /* ServeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CDA7E2245857E00A5804E /* ServeRating.swift */; };
+		E14CDA83224585BF00A5804E /* ServeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CDA82224585BF00A5804E /* ServeReview.swift */; };
 		E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1540545220E5B9A00188638 /* AppDelegate.swift */; };
 		E154054D220E5B9B00188638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E154054C220E5B9B00188638 /* Assets.xcassets */; };
 		E1540550220E5B9B00188638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E154054E220E5B9B00188638 /* LaunchScreen.storyboard */; };
+		E1540567220E677F00188638 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1540566220E677F00188638 /* Ingredient.swift */; };
+		E1540569220E68FB00188638 /* CallbackResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1540568220E68FB00188638 /* CallbackResult.swift */; };
+		E154056B220E6CD700188638 /* IngredientsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E154056A220E6CD700188638 /* IngredientsResponse.swift */; };
+		E158FC28224305EA000EA79B /* IngredientHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC27224305EA000EA79B /* IngredientHolder.swift */; };
 		E158FC2A224317C2000EA79B /* PopUpTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC29224317C2000EA79B /* PopUpTransition.swift */; };
 		E158FC2D224319F5000EA79B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC2C224319F5000EA79B /* ResultViewController.swift */; };
 		E158FC2F22431A30000EA79B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC2E22431A30000EA79B /* ResultView.swift */; };
+		E158FC3122431FF8000EA79B /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC3022431FF8000EA79B /* ResultViewModel.swift */; };
+		E158FC3322432051000EA79B /* ResultPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC3222432051000EA79B /* ResultPageViewModel.swift */; };
 		E158FC3722443F73000EA79B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E158FC3622443F73000EA79B /* ProgressView.swift */; };
 		E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBBD223335C40071D5C3 /* IngredientsPickerViewController.swift */; };
 		E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBBF223335DF0071D5C3 /* RootViewController.swift */; };
@@ -28,12 +39,26 @@
 		E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBC3223335F90071D5C3 /* IngredientsPickerView.swift */; };
 		E1E8CBC7223336AA0071D5C3 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBC6223336AA0071D5C3 /* ViewControllerFactory.swift */; };
 		E1E8CBCA2233390B0071D5C3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBC92233390B0071D5C3 /* BaseViewController.swift */; };
+		E1E8CBCD22333A160071D5C3 /* IngredientsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBCC22333A160071D5C3 /* IngredientsPickerViewModel.swift */; };
+		E1E8CBD022333A940071D5C3 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBCF22333A930071D5C3 /* ViewModelFactory.swift */; };
+		E1E8CBD222333B550071D5C3 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBD122333B550071D5C3 /* RootViewModel.swift */; };
 		E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBD422333E030071D5C3 /* Stylesheet.swift */; };
 		E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBD72233435C0071D5C3 /* CustomPresentationController.swift */; };
 		E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBD9223344BF0071D5C3 /* CALayer+Utils.swift */; };
 		E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBDB2233477F0071D5C3 /* GenericButton.swift */; };
+		E1E8CBF022334FEE0071D5C3 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBEF22334FEE0071D5C3 /* IngredientCell.swift */; };
+		E1E8CBF2223357AD0071D5C3 /* CountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBF1223357AD0071D5C3 /* CountView.swift */; };
 		E1E8CBF4223358080071D5C3 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBF3223358080071D5C3 /* ComponentFactory.swift */; };
+		E1E8CBF622335A900071D5C3 /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBF522335A900071D5C3 /* IngredientViewModel.swift */; };
+		E1E8CBF822335BB90071D5C3 /* IngredientsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBF722335BB90071D5C3 /* IngredientsSectionViewModel.swift */; };
+		E1E8CBFA22336ACD0071D5C3 /* IngredientSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBF922336ACC0071D5C3 /* IngredientSectionTitleView.swift */; };
+		E1E8CBFC223372650071D5C3 /* IngredientsPickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBFB223372650071D5C3 /* IngredientsPickerHeaderView.swift */; };
 		E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CBFE223469430071D5C3 /* PushButton.swift */; };
+		E1E8CC012235683A0071D5C3 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CC002235683A0071D5C3 /* SHA1.swift */; };
+		E1E8CC04223568550071D5C3 /* IngredientsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CC03223568550071D5C3 /* IngredientsWebService.swift */; };
+		E1E8CC0622356DB80071D5C3 /* Liquid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CC0522356DB80071D5C3 /* Liquid.swift */; };
+		E1E8CC0822356DF60071D5C3 /* Solid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CC0722356DF50071D5C3 /* Solid.swift */; };
+		E1E8CC0A223573140071D5C3 /* BlenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8CC09223573140071D5C3 /* BlenderService.swift */; };
 		E1E8CC1322357D4E0071D5C3 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC0B22357D4E0071D5C3 /* Montserrat-Black.otf */; };
 		E1E8CC1422357D4E0071D5C3 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC0C22357D4E0071D5C3 /* Montserrat-Hairline.otf */; };
 		E1E8CC1522357D4E0071D5C3 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1E8CC0D22357D4E0071D5C3 /* Montserrat-SemiBold.otf */; };
@@ -56,16 +81,27 @@
 		0944258E2235800100F15D5E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0944258F2235800100F15D5E /* Droplet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Droplet.png; sourceTree = "<group>"; };
 		09442598223581D100F15D5E /* LiquidScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidScene.swift; sourceTree = "<group>"; };
+		099410BF2245AC80007D0D13 /* BlenderIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderIngredientViewModel.swift; sourceTree = "<group>"; };
 		735C2196034F36942DD7644A /* Pods-MixParadise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixParadise.release.xcconfig"; path = "Target Support Files/Pods-MixParadise/Pods-MixParadise.release.xcconfig"; sourceTree = "<group>"; };
 		C5AA96444AE6C9D01C7AF0FE /* libPods-MixParadise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MixParadise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14CDA7A224584AD00A5804E /* ServeIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeIngredient.swift; sourceTree = "<group>"; };
+		E14CDA7C2245854D00A5804E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
+		E14CDA7E2245857E00A5804E /* ServeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeRating.swift; sourceTree = "<group>"; };
+		E14CDA82224585BF00A5804E /* ServeReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeReview.swift; sourceTree = "<group>"; };
 		E1540542220E5B9A00188638 /* MixParadise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixParadise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1540545220E5B9A00188638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E154054C220E5B9B00188638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E154054F220E5B9B00188638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1540551220E5B9B00188638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1540566220E677F00188638 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		E1540568220E68FB00188638 /* CallbackResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackResult.swift; sourceTree = "<group>"; };
+		E154056A220E6CD700188638 /* IngredientsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsResponse.swift; sourceTree = "<group>"; };
+		E158FC27224305EA000EA79B /* IngredientHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientHolder.swift; sourceTree = "<group>"; };
 		E158FC29224317C2000EA79B /* PopUpTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTransition.swift; sourceTree = "<group>"; };
 		E158FC2C224319F5000EA79B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E158FC2E22431A30000EA79B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E158FC3022431FF8000EA79B /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		E158FC3222432051000EA79B /* ResultPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewModel.swift; sourceTree = "<group>"; };
 		E158FC3622443F73000EA79B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		E1E8CBBD223335C40071D5C3 /* IngredientsPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPickerViewController.swift; sourceTree = "<group>"; };
 		E1E8CBBF223335DF0071D5C3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -73,12 +109,26 @@
 		E1E8CBC3223335F90071D5C3 /* IngredientsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPickerView.swift; sourceTree = "<group>"; };
 		E1E8CBC6223336AA0071D5C3 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E1E8CBC92233390B0071D5C3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E1E8CBCC22333A160071D5C3 /* IngredientsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPickerViewModel.swift; sourceTree = "<group>"; };
+		E1E8CBCF22333A930071D5C3 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		E1E8CBD122333B550071D5C3 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E1E8CBD422333E030071D5C3 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		E1E8CBD72233435C0071D5C3 /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		E1E8CBD9223344BF0071D5C3 /* CALayer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Utils.swift"; sourceTree = "<group>"; };
 		E1E8CBDB2233477F0071D5C3 /* GenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButton.swift; sourceTree = "<group>"; };
+		E1E8CBEF22334FEE0071D5C3 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		E1E8CBF1223357AD0071D5C3 /* CountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountView.swift; sourceTree = "<group>"; };
 		E1E8CBF3223358080071D5C3 /* ComponentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		E1E8CBF522335A900071D5C3 /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
+		E1E8CBF722335BB90071D5C3 /* IngredientsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsSectionViewModel.swift; sourceTree = "<group>"; };
+		E1E8CBF922336ACC0071D5C3 /* IngredientSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSectionTitleView.swift; sourceTree = "<group>"; };
+		E1E8CBFB223372650071D5C3 /* IngredientsPickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPickerHeaderView.swift; sourceTree = "<group>"; };
 		E1E8CBFE223469430071D5C3 /* PushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
+		E1E8CC002235683A0071D5C3 /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		E1E8CC03223568550071D5C3 /* IngredientsWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsWebService.swift; sourceTree = "<group>"; };
+		E1E8CC0522356DB80071D5C3 /* Liquid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liquid.swift; sourceTree = "<group>"; };
+		E1E8CC0722356DF50071D5C3 /* Solid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solid.swift; sourceTree = "<group>"; };
+		E1E8CC09223573140071D5C3 /* BlenderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderService.swift; sourceTree = "<group>"; };
 		E1E8CC0B22357D4E0071D5C3 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
 		E1E8CC0C22357D4E0071D5C3 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
 		E1E8CC0D22357D4E0071D5C3 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
@@ -120,6 +170,37 @@
 			path = SpriteKit;
 			sourceTree = "<group>";
 		};
+		099410BE2245AC70007D0D13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E14CDA802245859500A5804E /* Serve */ = {
+			isa = PBXGroup;
+			children = (
+				E14CDA7A224584AD00A5804E /* ServeIngredient.swift */,
+				E14CDA7E2245857E00A5804E /* ServeRating.swift */,
+				E14CDA7C2245854D00A5804E /* ServeResponse.swift */,
+				E14CDA82224585BF00A5804E /* ServeReview.swift */,
+			);
+			path = Serve;
+			sourceTree = "<group>";
+		};
+		E14CDA81224585A100A5804E /* Ingredient */ = {
+			isa = PBXGroup;
+			children = (
+				099410BE2245AC70007D0D13 /* ViewModel */,
+				E1540566220E677F00188638 /* Ingredient.swift */,
+				E158FC27224305EA000EA79B /* IngredientHolder.swift */,
+				E154056A220E6CD700188638 /* IngredientsResponse.swift */,
+				E1E8CC0522356DB80071D5C3 /* Liquid.swift */,
+				E1E8CC0722356DF50071D5C3 /* Solid.swift */,
+			);
+			path = Ingredient;
+			sourceTree = "<group>";
+		};
 		E1540539220E5B9A00188638 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				E1540545220E5B9A00188638 /* AppDelegate.swift */,
+				E154055F220E66C500188638 /* Domain */,
 				E1540557220E5E5400188638 /* UI */,
 				E1540558220E5E5900188638 /* Ressources */,
 				E1540559220E5E8500188638 /* SupportingFiles */,
@@ -182,6 +264,26 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		E154055F220E66C500188638 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E1540560220E66CF00188638 /* Model */,
+				E1E8CC02223568550071D5C3 /* Service */,
+				E1E8CBD322333C530071D5C3 /* Utils */,
+				E1E8CBCB223339C30071D5C3 /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E1540560220E66CF00188638 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E14CDA81224585A100A5804E /* Ingredient */,
+				E14CDA802245859500A5804E /* Serve */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E158FC2B224319E3000EA79B /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +315,7 @@
 		E1E8CBBA223335910071D5C3 /* IngredientsPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E1E8CBEE22334FC80071D5C3 /* Subviews */,
 				E1E8CBBD223335C40071D5C3 /* IngredientsPickerViewController.swift */,
 				E1E8CBC3223335F90071D5C3 /* IngredientsPickerView.swift */,
 			);
@@ -233,6 +336,30 @@
 				E1E8CBC92233390B0071D5C3 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E1E8CBCB223339C30071D5C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				099410BF2245AC80007D0D13 /* BlenderIngredientViewModel.swift */,
+				E1E8CBF522335A900071D5C3 /* IngredientViewModel.swift */,
+				E1E8CBCC22333A160071D5C3 /* IngredientsPickerViewModel.swift */,
+				E1E8CBF722335BB90071D5C3 /* IngredientsSectionViewModel.swift */,
+				E1E8CBD122333B550071D5C3 /* RootViewModel.swift */,
+				E1E8CBCF22333A930071D5C3 /* ViewModelFactory.swift */,
+				E158FC3222432051000EA79B /* ResultPageViewModel.swift */,
+				E158FC3022431FF8000EA79B /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1E8CBD322333C530071D5C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1540568220E68FB00188638 /* CallbackResult.swift */,
+				E1E8CC002235683A0071D5C3 /* SHA1.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E1E8CBD6223342A00071D5C3 /* Common */ = {
@@ -262,12 +389,32 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		E1E8CBEE22334FC80071D5C3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8CBF1223357AD0071D5C3 /* CountView.swift */,
+				E1E8CBEF22334FEE0071D5C3 /* IngredientCell.swift */,
+				E1E8CBF922336ACC0071D5C3 /* IngredientSectionTitleView.swift */,
+				E1E8CBFB223372650071D5C3 /* IngredientsPickerHeaderView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		E1E8CBFD223469340071D5C3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				E1E8CBFE223469430071D5C3 /* PushButton.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E1E8CC02223568550071D5C3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8CC09223573140071D5C3 /* BlenderService.swift */,
+				E1E8CC03223568550071D5C3 /* IngredientsWebService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		ECFAB8F2C61E5257EFE8634E /* Pods */ = {
@@ -395,26 +542,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E158FC28224305EA000EA79B /* IngredientHolder.swift in Sources */,
+				E1E8CBFC223372650071D5C3 /* IngredientsPickerHeaderView.swift in Sources */,
 				E1E8CBC4223335F90071D5C3 /* IngredientsPickerView.swift in Sources */,
 				E158FC2F22431A30000EA79B /* ResultView.swift in Sources */,
+				E1E8CBD022333A940071D5C3 /* ViewModelFactory.swift in Sources */,
+				E1E8CC04223568550071D5C3 /* IngredientsWebService.swift in Sources */,
 				E1E8CBD82233435C0071D5C3 /* CustomPresentationController.swift in Sources */,
 				E1E8CBDC2233477F0071D5C3 /* GenericButton.swift in Sources */,
 				094425902235800100F15D5E /* SBDynamicWaterNode.m in Sources */,
 				E1E8CBD522333E030071D5C3 /* Stylesheet.swift in Sources */,
 				094425952235800100F15D5E /* IngredientNode.m in Sources */,
+				E1E8CBF822335BB90071D5C3 /* IngredientsSectionViewModel.swift in Sources */,
 				E1E8CBC7223336AA0071D5C3 /* ViewControllerFactory.swift in Sources */,
+				E1E8CBFA22336ACD0071D5C3 /* IngredientSectionTitleView.swift in Sources */,
 				E1E8CBCA2233390B0071D5C3 /* BaseViewController.swift in Sources */,
 				E158FC3722443F73000EA79B /* ProgressView.swift in Sources */,
 				E1E8CBC2223335EC0071D5C3 /* RootView.swift in Sources */,
 				E158FC2A224317C2000EA79B /* PopUpTransition.swift in Sources */,
+				E154056B220E6CD700188638 /* IngredientsResponse.swift in Sources */,
 				094425922235800100F15D5E /* GameScene.m in Sources */,
 				E1E8CBDA223344BF0071D5C3 /* CALayer+Utils.swift in Sources */,
+				E1E8CBF022334FEE0071D5C3 /* IngredientCell.swift in Sources */,
+				E14CDA7F2245857E00A5804E /* ServeRating.swift in Sources */,
+				E1E8CBCD22333A160071D5C3 /* IngredientsPickerViewModel.swift in Sources */,
 				E1E8CBF4223358080071D5C3 /* ComponentFactory.swift in Sources */,
+				E1E8CBD222333B550071D5C3 /* RootViewModel.swift in Sources */,
+				E1540567220E677F00188638 /* Ingredient.swift in Sources */,
+				E158FC3122431FF8000EA79B /* ResultViewModel.swift in Sources */,
 				E1E8CBC0223335DF0071D5C3 /* RootViewController.swift in Sources */,
 				E1E8CBBE223335C40071D5C3 /* IngredientsPickerViewController.swift in Sources */,
 				09442599223581D100F15D5E /* LiquidScene.swift in Sources */,
+				099410C02245AC80007D0D13 /* BlenderIngredientViewModel.swift in Sources */,
 				E1E8CBFF223469430071D5C3 /* PushButton.swift in Sources */,
+				E1E8CBF622335A900071D5C3 /* IngredientViewModel.swift in Sources */,
+				E1E8CC0622356DB80071D5C3 /* Liquid.swift in Sources */,
+				E14CDA7D2245854D00A5804E /* ServeResponse.swift in Sources */,
+				E1E8CC0A223573140071D5C3 /* BlenderService.swift in Sources */,
+				E1E8CC012235683A0071D5C3 /* SHA1.swift in Sources */,
 				E1540546220E5B9A00188638 /* AppDelegate.swift in Sources */,
+				E1E8CC0822356DF60071D5C3 /* Solid.swift in Sources */,
+				E158FC3322432051000EA79B /* ResultPageViewModel.swift in Sources */,
+				E14CDA83224585BF00A5804E /* ServeReview.swift in Sources */,
+				E1E8CBF2223357AD0071D5C3 /* CountView.swift in Sources */,
+				E14CDA7B224584AD00A5804E /* ServeIngredient.swift in Sources */,
+				E1540569220E68FB00188638 /* CallbackResult.swift in Sources */,
 				E158FC2D224319F5000EA79B /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
