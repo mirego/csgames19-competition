@@ -58,10 +58,6 @@ fun MainActivity.setupListeners(blender: Blender, ingredientsDialog: Ingredients
                 blender.ingredientsIdToOunces
             )
         }
-
-        // TODO: remove me
-        blender.addLiquid("temp", "#A66C1E", 1f)
-
         ingredientsDialog.show(supportFragmentManager, ADD_INGREDIENTS_FRAGMENT_TAG)
     }
 }

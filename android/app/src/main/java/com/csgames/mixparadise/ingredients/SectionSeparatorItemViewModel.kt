@@ -1,0 +1,3 @@
+package com.csgames.mixparadise.ingredients
+
+class SectionSeparatorItemViewModel

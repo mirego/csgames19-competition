@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.csgames.mixparadise.api.ApiHelper
 import com.csgames.mixparadise.extensions.*
 import com.csgames.mixparadise.ingredients.IngredientsBottomSheetDialogFragment
+import com.csgames.mixparadise.model.Alcohol
+import com.csgames.mixparadise.model.Drink
+import com.csgames.mixparadise.model.Ingredient
+import com.csgames.mixparadise.model.Juice
+import com.csgames.mixparadise.viewmodel.SectionType
 import kotlinx.android.synthetic.main.view_blender_with_table.*
 import com.csgames.mixparadise.result.ResultDialogFragment
 
@@ -31,47 +37,73 @@ class MainActivity : AppCompatActivity() {
             addIngredientsButton.visibility = View.GONE
             serveButton.visibility = View.VISIBLE
         }) {
-            showResultDialog()
+            showResultDialog(it)
         }
 
         setupListeners(blender, ingredientsDialog)
     }
 
-    private fun showResultDialog() {
+    private fun showResultDialog(ingredientsIdToOuncesMap: HashMap<String, Int>) {
         if (resultDialog.isAdded) {
             return
         }
-
+        resultDialog.arguments = Bundle().apply {
+            putSerializable(
+                ResultDialogFragment.INGREDIENTS_ID_TO_OUNCES_MAP_KEY,
+                ingredientsIdToOuncesMap
+            )
+        }
         resultDialog.show(supportFragmentManager, RESULT_FRAGMENT_TAG)
     }
 
     override fun onAttachFragment(fragment: Fragment?) {
         super.onAttachFragment(fragment)
         (fragment as? IngredientsBottomSheetDialogFragment)?.apply {
-            fragment.setIngredientSelectedListener { id ->
-
+            fragment.setIngredientSelectedListener { id, sectionType ->
+                getIngredient(id, sectionType)
             }
         }
     }
 
-    // TODO: pass the juice
-    private fun onJuiceSelected() {
-        blender.addLiquid("orange", "#A66C1E", 0.5f)
+    private fun getIngredient(id: String, sectionType: SectionType) {
+        when (sectionType) {
+            SectionType.JUICE -> ApiHelper.getJuice(id) { juice ->
+                juice?.let {
+                    onJuiceSelected(it)
+                }
+            }
+            SectionType.DRINK -> ApiHelper.getDrink(id) { drink ->
+                drink?.let {
+                    onDrinkSelected(it)
+                }
+            }
+            SectionType.INGREDIENT -> ApiHelper.getIngredient(id) { ingredient ->
+                ingredient?.let {
+                    onIngredientSelected(it)
+                }
+            }
+            SectionType.ALCOHOL -> ApiHelper.getAlcohol(id) { alcohol ->
+                alcohol?.let {
+                    onAlcoholSelected(it)
+                }
+            }
+        }
     }
 
-    // TODO: pass the drink
-    private fun onDrinkSelected() {
-        blender.addLiquid("pepsi", "#A66C1E", 0.5f)
+    private fun onJuiceSelected(juice: Juice) {
+        blender.addLiquid(juice.id, juice.color, juice.opacity)
     }
 
-    // TODO: pass the ingredient
-    private fun onIngredientSelected() {
-        blender.addSolidIngredient()
+    private fun onDrinkSelected(drink: Drink) {
+        blender.addLiquid(drink.id, drink.color, drink.opacity)
     }
 
-    // TODO: pass the alcohol
-    private fun onAlcoholSelected() {
-        blender.addLiquid("Four Loko", "#A66C1E", 0.5f)
+    private fun onIngredientSelected(ingredient: Ingredient) {
+        blender.addSolidIngredient(ingredient)
+    }
+
+    private fun onAlcoholSelected(alcohol: Alcohol) {
+        blender.addLiquid(alcohol.id, alcohol.color, alcohol.opacity)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
